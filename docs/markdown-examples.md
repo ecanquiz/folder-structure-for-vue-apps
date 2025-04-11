@@ -1,7 +1,91 @@
-# Markdown Extension Examples
+# Estructuras de Carpeta
+
+La estructura de carpetas organiza los archivos y componentes de la aplicación. Una estructura clara mejora la legibilidad y escalabilidad del proyecto.
+
+A continuación se muestra una estructura básica de un proyecto Vue.
+
+```sh
+└── src/
+    ├── assets/
+    ├── components/
+    ├── router/
+    ├── store/
+    └── views/
+```
+
+Tenga en cuenta que por convensión, la carpeta `views` puede que sea llamada `pages`. 
+
+A medida que el proyecto crece empezamos a necesitar carpetas adicionales.
+
+```sh
+└── src/
+    ├── assets/
+    ├── components/
+    ├── composables/
+    ├── layouts/
+    ├── middleware/
+    ├── router/
+    ├── services/
+    ├── store/
+    ├── types/
+    └── utils/
+```
+
+Tenga en cuenta que por convensión, la carpeta `layouts/` puede que sea llamada `themes/`. Así como la carpeta `services/` puede ser llamada `apis/`. Y también, la carpeta `utils/` puede ser llamada `libs`. Las distintas denominaciones son cuestiones de forma más no de fondo.
+
+La inevitable escalada del proyecto puede lograr transformarce en algo como esto.
+
+```sh
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── composables/
+│   ├── layouts/
+│   ├── middleware/
+│   ├── router/
+│   ├── types/
+│   ├── utils/
+│   └── modules/
+│       ├── Auth/
+│       │   ├── components/
+│       │   ├── composables/
+│       │   ├── router/
+│       │   ├── services/
+│       │   ├── stores/
+│       │   ├── types/
+│       │   └── views/
+│       ├── User/
+│       ...
+└── tests/
+```
+
+# El Problema
+
+Suponiendo que vamos a revisar la página de **Iniciar Sesión** para depurar nuestro código. Entramos en la carpeta `src/modules/Auth/views/` y seleccionamos el archivo `Login.vue`.
+
+![the-problem](./img/the-problem-01.png)
+
+Tenga en cuenta que `Login.vue` importa dos (2) archivos: el componente `LoginForm.vue` y el composable `useLogin.ts`, respectivamente.
+
+![the-problem](./img/the-problem-02.png)
+
+Afortunadamente nuestro código ya está ordenado por módulos. En este caso, todo lo que necesitamos revisar está ubicado en el módulo `Auth`.
+
+![the-problem](./img/the-problem-03.png)
+
+Tomando en cuenta que estos archivos no son reutilizables, nos preguntamos:
+
+- La estructura de carpetas estándar prevalece el tipo de archivo por encima de la regla de negocio a que se refiere?
+- Es suficiente agruparlos por módulos y luego por tipo de archivos? En este caso, nos obliga a colocarle un prefijo (o sufijo) para relacionarlo con el correspondiente componente padre.
+- Es necesario que estén tan separados entre ellos? Qué sucederá cuando la aplicación empiece a escalar con más archivos y más módulos?
+
+A continuación, exploraremos alternativas que se pueden adoptar para lograr una estructura de carpetas más cómoda y flexible.
 
 
-```sh{2,3}
+# Solución
+
+
+```sh
 └── src/
     ├── core/ 
     └── modules/
@@ -296,7 +380,6 @@
             ├── services/
             ├── types/
             └── views/
-
 ```
 
 
