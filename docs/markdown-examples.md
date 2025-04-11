@@ -1,4 +1,4 @@
-# Estructuras de Carpeta
+# Estructuras Básica de Carpetas
 
 La estructura de carpetas organiza los archivos y componentes de la aplicación. Una estructura clara mejora la legibilidad y escalabilidad del proyecto.
 
@@ -13,11 +13,16 @@ A continuación se muestra una estructura básica de un proyecto Vue.
     └── views/
 ```
 
-Tenga en cuenta que por convensión, la carpeta `views` puede que sea llamada `pages`. 
+::: tip Tenga en cuenta
+Por convensión, la carpeta `views` puede que sea llamada `pages`.
+:::
 
-A medida que el proyecto crece empezamos a necesitar carpetas adicionales.
+## Cuando el Proyecto Empieza a Crecer
 
-```sh
+
+A medida que el proyecto avanza comenzamos a necesitar carpetas adicionales de agrupación.
+
+```sh{5,,6,8,9,10,11}
 └── src/
     ├── assets/
     ├── components/
@@ -28,14 +33,22 @@ A medida que el proyecto crece empezamos a necesitar carpetas adicionales.
     ├── services/
     ├── store/
     ├── types/
-    └── utils/
+    ├── utils/
+    └── views/
 ```
 
-Tenga en cuenta que por convensión, la carpeta `layouts/` puede que sea llamada `themes/`. Así como la carpeta `services/` puede ser llamada `apis/`. Y también, la carpeta `utils/` puede ser llamada `libs`. Las distintas denominaciones son cuestiones de forma más no de fondo.
+::: tip Tenga en cuenta
+Por convensión, la carpeta `layouts/` puede que sea llamada `themes/`. Así como la carpeta `services/` puede ser llamada `apis/`. Y también, la carpeta `utils/` puede ser llamada `libs`. Las distintas denominaciones son cuestiones de forma más no de fondo.
+:::
 
-La inevitable escalada del proyecto puede lograr transformarce en algo como esto.
+## Estructura Modular
 
-```sh
+
+La inevitable escalada del proyecto puede que se transforme en una **estructura modular**.
+
+>Una **estructura modular** de carpetas organiza el proyecto en módulos independientes, cada uno con su propia base de código. Esto facilita la organización del código. 
+
+```sh{10,11,12,13,14,15,16,17,18,19,20}
 ├── src/
 │   ├── assets/
 │   ├── components/
@@ -59,6 +72,19 @@ La inevitable escalada del proyecto puede lograr transformarce en algo como esto
 └── tests/
 ```
 
+::: warning Advertencia
+Tenga en cuenta que en la carpeta `tests/` se crean los archivos de pruebas, es factible que estos archivos sean organizados con una estructura parecida a la carpeta `src`.
+:::
+
+
+    
+
+
+
+
+
+
+
 # El Problema
 
 Suponiendo que vamos a revisar la página de **Iniciar Sesión** para depurar nuestro código. Entramos en la carpeta `src/modules/Auth/views/` y seleccionamos el archivo `Login.vue`.
@@ -75,11 +101,11 @@ Afortunadamente nuestro código ya está ordenado por módulos. En este caso, to
 
 Tomando en cuenta que estos archivos no son reutilizables, nos preguntamos:
 
-- La estructura de carpetas estándar prevalece el tipo de archivo por encima de la regla de negocio a que se refiere?
-- Es suficiente agruparlos por módulos y luego por tipo de archivos? En este caso, nos obliga a colocarle un prefijo (o sufijo) para relacionarlo con el correspondiente componente padre.
-- Es necesario que estén tan separados entre ellos? Qué sucederá cuando la aplicación empiece a escalar con más archivos y más módulos?
+- Es suficiente agrupar los archivos por módulos y luego por el tipo de archivos? En este caso, para clasificarlos nos obliga a colocarle un prefijo (o sufijo) para relacionarlo con el correspondiente componente padre.
+- En esta estructura de carpetas, prevalece el tipo de archivo por encima de la particular regla de negocio a la que concierne?
+- Es necesario que estén tan separados entre ellos, `Login.vue`, `FormLogin` y `useLogin.ts`, respectivamente? Qué sucederá cuando la aplicación empiece a escalar con más archivos y más módulos?
 
-A continuación, exploraremos alternativas que se pueden adoptar para lograr una estructura de carpetas más cómoda y flexible.
+A continuación, exploremos alternativas que pueden ser adoptadas para intentar lograr una estructura de carpetas más cómoda, flexible y escalable.
 
 
 # Solución
