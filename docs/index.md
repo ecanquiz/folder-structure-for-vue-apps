@@ -5,14 +5,14 @@ layout: home
 hero:
   name: "Vue Apps"
   text: "Estructura de Carpetas"
-  tagline: Ordenar código frontend
+  tagline: Cómo ordenar el código frontend
   image:
     src: /img/logo.png
     alt: VitePress
   actions:
     - theme: brand
       text: Markdown Examples
-      link: /markdown-examples
+      link: /folder-structures
     - theme: alt
       text: API Examples
       link: /api-examples

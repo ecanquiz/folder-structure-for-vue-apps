@@ -2,28 +2,45 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Estructura de Carpetas",
+  title: "Carpetas Vue-Apps",
   description: "Vue Apps",
-  base: '/folder-structure-for-vue-projects/', //  The default path during deployment / secondary address / base can be used/
+  base: '/folder-structure-for-vue-apps/', //  The default path during deployment / secondary address / base can be used/
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    logo: '/img/mylogo.png',
+    siteTitle: 'Vue Apps',
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Inicio', link: '/' },
+      { text: 'Comenzar', link: '/folder-structures' },
+      { text: 'ecanquiz', link: 'https://ecanquiz.github.io/' },      
     ],
-
-    sidebar: [
+    sidebar: [     
       {
-        text: 'Examples',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
+          { text: 'Estructuras de Carpetas', link: '/folder-structures' },
+          { text: 'Cuando la Aplicación Crece', link: '/when-the-app-grows' },
+          { text: 'Estructura Modular', link: '/modular-structure' },
+          { text: 'El Problema', link: '/the-problem' }
+        ]
+      }, {
+        text: 'Alternativas',
+        sidebarDepth: 1,    // optional, defaults to 1
+        collapsible: true,
+        collapsed: false, 
+
+        items: [
+          { text: 'Enfoques', link: '/approaches' }
+        ]
+      }, {
+        items: [
           { text: 'Runtime API Examples', link: '/api-examples' }
         ]
       }
+
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/ecanquiz/folder-structure-for-vue-apps' }
     ]
   }
 })

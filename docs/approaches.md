@@ -1,114 +1,173 @@
-# Estructuras Básica de Carpetas
-
-La estructura de carpetas organiza los archivos y componentes de la aplicación. Una estructura clara mejora la legibilidad y escalabilidad del proyecto.
-
-A continuación se muestra una estructura básica de un proyecto Vue.
+# Enfoques
 
 ```sh
 └── src/
-    ├── assets/
-    ├── components/
     ├── router/
-    ├── store/
     └── views/
+        ├── Foo.vue
+        ├── Bar.vue
+        └── Baz.vue
 ```
 
-::: tip Tenga en cuenta
-Por convensión, la carpeta `views` puede que sea llamada `pages`.
-:::
-
-## Cuando el Proyecto Empieza a Crecer
-
-
-A medida que el proyecto avanza comenzamos a necesitar carpetas adicionales de agrupación.
-
-```sh{5,,6,8,9,10,11}
+```sh
 └── src/
-    ├── assets/
+    ├── router/
+    └── views/
+        └── Foo/
+        │   ├── FooA.vue
+        │   ├── useFooA.ts
+        │   └── Index.vue
+        ├── Bar.vue
+        └── Baz.vue
+```
+
+```sh
+└── src/
+    ├── router/
+    └── views/
+        └── Foo/
+        │   ├── FooA.vue
+        │   ├── FooB.vue
+        │   ├── FooC.vue
+        │   ├── useFooA.ts
+        │   ├── useFooB.ts
+        │   ├── useFooC.ts
+        │   └── Index.vue
+        ├── Bar.vue
+        └── Baz.vue
+```
+
+```sh
+└── src/
+    ├── router/
+    └── views/
+        ├── Foo/
+        │   ├── components/
+        │   │   ├── FooA.vue
+        │   │   ├── FooB.vue
+        │   │   └── FooC.vue
+        │   ├── composables/
+        │   │   ├── useFooA.ts
+        │   │   ├── useFooB.ts
+        │   │   └── useFooC.ts
+        │   └── Index.vue
+        ├── Bar.vue
+        └── Baz.vue
+```
+
+```sh
+└── src/
+    ├── router/
+    └── views/
+        ├── Foo/
+        │   ├── components/
+        │   ├── composables/
+        │   └── index.vue
+        ├── Bar.vue
+        └── Baz.vue
+```
+
+```sh
+└── src/
+    ├── router/
+    └── views/
+        ├── Foo/
+        ├── Bar.vue
+        └── Baz.vue
+```
+
+```sh
+└── src/
     ├── components/
     ├── composables/
-    ├── layouts/
-    ├── middleware/
     ├── router/
-    ├── services/
-    ├── store/
-    ├── types/
-    ├── utils/
     └── views/
 ```
 
-::: tip Tenga en cuenta
-Por convensión, la carpeta `layouts/` puede que sea llamada `themes/`. Así como la carpeta `services/` puede ser llamada `apis/`. Y también, la carpeta `utils/` puede ser llamada `libs`. Las distintas denominaciones son cuestiones de forma más no de fondo.
-:::
-
-## Estructura Modular
-
-
-La inevitable escalada del proyecto puede que se transforme en una **estructura modular**.
-
->Una **estructura modular** de carpetas organiza el proyecto en módulos independientes, cada uno con su propia base de código. Esto facilita la organización del código. 
-
-```sh{10,11,12,13,14,15,16,17,18,19,20}
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── composables/
-│   ├── layouts/
-│   ├── middleware/
-│   ├── router/
-│   ├── types/
-│   ├── utils/
-│   └── modules/
-│       ├── Auth/
-│       │   ├── components/
-│       │   ├── composables/
-│       │   ├── router/
-│       │   ├── services/
-│       │   ├── stores/
-│       │   ├── types/
-│       │   └── views/
-│       ├── User/
-│       ...
-└── tests/
+```sh
+└── src/
+    ├── components/
+    │   ├── GlobalA.vue
+    │   ├── GlobalB/
+    │   │   ├── GlobalB1.vue
+    │   │   ├── GlobalB2.vue
+    │   │   └── Index.vue
+    │   └── GlobalC.vue
+    ├── composables/
+    │   ├── useGlobal1.ts
+    │   ├── useGlobal2.ts
+    │   └── useGlobal3.ts
+    ├── router/
+    └── views/
 ```
 
-::: warning Advertencia
-Tenga en cuenta que en la carpeta `tests/` se crean los archivos de pruebas, es factible que estos archivos sean organizados con una estructura parecida a la carpeta `src`.
-:::
+
+```sh
+└── src/
+    ├── components/
+    │   ├── SuperGlobalA.vue
+    │   ├── SuperGlobalB/
+    │   │   ├── SuperGlobalB1.vue
+    │   │   ├── SuperGlobalB2.vue
+    │   │   └── Index.vue
+    │   └── SuperGlobalC.vue
+    ├── composables/
+    │   ├── useSuperGlobal1.ts
+    │   ├── useSuperGlobal2.ts
+    │   └── useSuperGlobal3.ts
+    ├── router/
+    └── modules/
+        ├── ModuleA
+        ├── ModuleB
+        │    ├── components/
+        │    │   ├── GlobalA.vue
+        │    │   ├── GlobalB/
+        │    │   │   ├── GlobalB1.vue
+        │    │   │   ├── GlobalB2.vue
+        │    │   │   └── Index.vue
+        │    │   └── GlobalC.vue
+        │    ├── composables/
+        │    │   ├── useGlobal1.ts
+        │    │   ├── useGlobal2.ts
+        │    │   └── useGlobal3.ts
+        │    ├── routes/
+        │    └── views/
+        │       ├── Foo/
+        │       │   ├── components/
+        │       │   │    ├── FooA.vue
+        │       │   │    ├── FooB.vue
+        │       │   │    └── FooC.vue
+        │       │   ├── composables/
+        │       │   │   ├── useFooA.ts
+        │       │   │   ├── useFooB.ts
+        │       │   │   └── useFooC.ts
+        │       │   └── Index.vue
+        │       ├── Bar.vue
+        │       └── Baz.vue
+        └── ModuleC
 
 
-    
+```
 
+```sh
+└── src/
+    ├── router/
+    └── views/
+        ├── Foo/
+        ├── Bar.vue
+        └── Baz.vue
+```
 
+```sh
+└── src/
+    ├── components/ 
+    ├── composables/
+    └── views/
+        ├── foo/
+        ├── bar/
+        └── baz/
+```
 
-
-
-
-
-# El Problema
-
-Suponiendo que vamos a revisar la página de **Iniciar Sesión** para depurar nuestro código. Entramos en la carpeta `src/modules/Auth/views/` y seleccionamos el archivo `Login.vue`.
-
-![the-problem](./img/the-problem-01.png)
-
-Tenga en cuenta que `Login.vue` importa dos (2) archivos: el componente `LoginForm.vue` y el composable `useLogin.ts`, respectivamente.
-
-![the-problem](./img/the-problem-02.png)
-
-Afortunadamente nuestro código ya está ordenado por módulos. En este caso, todo lo que necesitamos revisar está ubicado en el módulo `Auth`.
-
-![the-problem](./img/the-problem-03.png)
-
-Tomando en cuenta que estos archivos no son reutilizables, nos preguntamos:
-
-- Es suficiente agrupar los archivos por módulos y luego por el tipo de archivos? En este caso, para clasificarlos nos obliga a colocarle un prefijo (o sufijo) para relacionarlo con el correspondiente componente padre.
-- En esta estructura de carpetas, prevalece el tipo de archivo por encima de la particular regla de negocio a la que concierne?
-- Es necesario que estén tan separados entre ellos, `Login.vue`, `FormLogin` y `useLogin.ts`, respectivamente? Qué sucederá cuando la aplicación empiece a escalar con más archivos y más módulos?
-
-A continuación, exploremos alternativas que pueden ser adoptadas para intentar lograr una estructura de carpetas más cómoda, flexible y escalable.
-
-
-# Solución
 
 
 ```sh
