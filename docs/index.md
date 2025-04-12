@@ -3,9 +3,12 @@
 layout: home
 
 hero:
-  name: "Folder Structure for Vue Projects"
-  text: "Folder structure for vue project"
-  tagline: My great project tagline
+  name: "Vue Apps"
+  text: "Estructura de Carpetas"
+  tagline: Ordenar código frontend
+  image:
+    src: /img/logo.png
+    alt: VitePress
   actions:
     - theme: brand
       text: Markdown Examples

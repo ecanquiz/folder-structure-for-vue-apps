@@ -2,8 +2,8 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Folder Structure for Vue Projects",
-  description: "Folder structure for vue project",
+  title: "Estructura de Carpetas",
+  description: "Vue Apps",
   base: '/folder-structure-for-vue-projects/', //  The default path during deployment / secondary address / base can be used/
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
