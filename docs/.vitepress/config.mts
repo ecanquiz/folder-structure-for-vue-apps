@@ -7,7 +7,7 @@ export default defineConfig({
   base: '/folder-structure-for-vue-apps/', //  The default path during deployment / secondary address / base can be used/
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    logo: '/img/mylogo.png',
+    logo: '/mylogo.png',
     siteTitle: 'Vue Apps',
     nav: [
       { text: 'Inicio', link: '/' },
@@ -23,13 +23,13 @@ export default defineConfig({
           { text: 'El Problema', link: '/the-problem' }
         ]
       }, {
-        text: 'Alternativas',
+        text: 'Alternativa',
         sidebarDepth: 1,    // optional, defaults to 1
         collapsible: true,
         collapsed: false, 
 
         items: [
-          { text: 'Enfoques', link: '/approaches' }
+          { text: 'El Enfoque', link: '/the-approach' }
         ]
       }, {
         items: [

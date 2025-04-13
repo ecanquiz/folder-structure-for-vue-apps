@@ -7,7 +7,7 @@ hero:
   text: "Estructura de Carpetas"
   tagline: Cómo ordenar el código frontend
   image:
-    src: /img/logo.png
+    src: /logo.png
     alt: VitePress
   actions:
     - theme: brand

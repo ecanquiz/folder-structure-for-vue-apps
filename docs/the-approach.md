@@ -1,4 +1,4 @@
-# Enfoques
+# El Enfoque
 
 ```sh
 └── src/
@@ -170,25 +170,7 @@
 
 
 
-```sh
-└── src/
-    ├── core/ 
-    └── modules/
-```
 
-
-```sh{2,3,4,5,6,7,8,9}
-└── src/
-    ├── core/
-    │   ├── assets/
-    │   ├── components/
-    │   ├── composables/
-    │   ├── middleware/
-    │   ├── router/
-    │   ├── types/
-    │   └── utils/
-    └── modules/
-```
 
 ```sh{3,4,5}
 └── src/
