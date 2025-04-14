@@ -1,6 +1,8 @@
 # El Problema
 
-Suponiendo que vamos a revisar la página de **Iniciar Sesión** para depurar nuestro código. Entramos en la carpeta `src/modules/Auth/views/` y seleccionamos el archivo `Login.vue`.
+>Supongamos que vamos a revisar la página de **Iniciar Sesión** para depurar nuestro código. 
+
+Entremos en la carpeta `src/modules/Auth/views/` y seleccionemos el archivo `Login.vue`.
 
 ```sh{14}
 └── src/
@@ -21,20 +23,22 @@ Suponiendo que vamos a revisar la página de **Iniciar Sesión** para depurar nu
         │       └── Register.vue
         └── User/
 ```
-Al editarlo nos encontraremos con un [SFC](https://vuejs.org/guide/scaling-up/sfc) parecido a lo siguiente.
+Al editarlo nos encontraremos con un [SFC](https://vuejs.org/guide/scaling-up/sfc) parecido al siguiente.
 
-```vue
+```vue{2,3}
 <script setup lang="ts">  
-  import FormLogin from "../components/FormLogin.vue";
-  import { useLogin } from '../composables/useLogin'  
+import FormLogin from "../components/FormLogin.vue";
+import { useLogin } from '../composables/useLogin'  
   
-  // omitted for brevity ...
+// omitted for brevity ...
+const {erro, sending, login} = useLogin();
+// omitted for brevity ...
 </script>
 
 <template>
     <!-- omitted for brevity ... -->
     <FormLogin
-      @submit='login($event)'      
+      @submit='login($event)'
       :sending='sending'
       :error='error'
     />
@@ -42,9 +46,9 @@ Al editarlo nos encontraremos con un [SFC](https://vuejs.org/guide/scaling-up/sf
 </template>
 ```
 
-Tenga en cuenta que `Login.vue` importa dos (2) archivos: el componente `LoginForm.vue` y el composable `useLogin.ts`, respectivamente.
+Tenga en cuenta que `Login.vue` importa dos (2) archivos: 
 
-
+1) El componente `LoginForm.vue`.
 ```sh{7,25}
 └── src/
     ├── core/
@@ -76,9 +80,7 @@ Tenga en cuenta que `Login.vue` importa dos (2) archivos: el componente `LoginFo
         └── User/
 ```
 
-Solo nos falta localizar y editar un archivo.
-
-
+2) El composable `useLogin.ts`.
 ```sh{7,18,29}
 └── src/
     ├── core/
@@ -116,19 +118,23 @@ Solo nos falta localizar y editar un archivo.
 
 Afortunadamente nuestro código ya está ordenado por módulos. En este caso, todo lo que necesitamos revisar está ubicado en el módulo `Auth`.
 
->Pero, si este modulo tuviera más vistas, mas componentes, más composables y desplegáramos las otras correspondientes carpetas que lo conforman. No le parece demasiado abrumador la distante separación entre estos tres archivos que evidentemente conciernen a la misma funcionalidad. En este caso, iniciar sesión.
+>Pero, si este modulo tuviera más vistas, mas componentes, más composables y desplegáramos las otras correspondientes carpetas que lo conforman. **_¿No le parece demasiado abrumador la distante separación entre estos tres archivos que evidentemente conciernen a la misma funcionalidad?_**
 
 Tomando en cuenta que estos archivos no son reutilizables, nos preguntamos:
 
-- En esta estructura de carpetas, prevalece el tipo de archivo por encima de la particular regla de negocio a la que concierne?
+- ¿En esta estructura de carpetas, prevalece el tipo de archivo por encima de la particular regla de negocio a la que concierne?
 
-- Es suficiente agrupar los archivos por módulos y luego por el tipo de archivos? 
-  > En este caso, para clasificarlos, nos obliga a colocarle un prefijo (o sufijo) para relacionarlo con el correspondiente componente padre.
+- ¿Es suficiente agrupar los archivos por módulos y luego por el tipo de archivos? 
+  > En este caso, para clasificarlos, nos obliga a colocarle un prefijo (o sufijo) para relacionarlo con el correspondiente componente padre, y así no confundir por ejemplo: `FormLogin.vue` con `FormRegister.vue`. 
 
-- Es necesario que estén tan separados entre ellos, `Login.vue`, `FormLogin` y `useLogin.ts`, respectivamente? Qué sucederá cuando la aplicación empiece a escalar con más archivos y más módulos?
+- ¿Es necesario que estén tan separados entre ellos, `Login.vue`, `FormLogin` y `useLogin.ts`, respectivamente?
 
-## A continuación
+- ¿Qué sucederá cuando la aplicación empiece a escalar con más archivos y más módulos?
 
-Exploraremos alternativas que pueden ser adoptadas para intentar lograr una estructura de carpetas más cómoda, flexible y escalable.
+
+---
+
+
+>**A continuación**, exploraremos alternativas para intentar mejorar una estructura de carpetas de archivos más cómoda, flexible y escalable.
 
 
