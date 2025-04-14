@@ -1,6 +1,11 @@
 # El Enfoque
 
-```sh
+Para nuestro enfoque, partiremo de un pequeña aplicación que solo tiene 3 vistas o páginas. Por lo que empezaremos creando dos correspondientes carpetas:
+
+1. **`router/`**: Aquí configuraremos el sistema de rutas.
+2. **`views/`**: Aquí crearemos las vistas o páginas de nuestra aplicación.
+
+```sh{4,5,6}
 └── src/
     ├── router/
     └── views/
@@ -9,53 +14,68 @@
         └── Baz.vue
 ```
 
-```sh
+## El componente `Foo.vue` empieza a crecer
+
+Supongamos que necesitamos refactorizar la vista `Foo.vue`, creando un componente hijo que llamaremos `FooChildren.vue`. Dicho componente **no es reutilizable** ya que solo es de utilidad para el componente padre.
+
+Igualmente, y como buena práctica, creamos el composable `useFoo.ts`, para separar la regla de negocio de la interfaz gráfica.
+
+```sh{4,5,6,7}
 └── src/
     ├── router/
     └── views/
         └── Foo/
-        │   ├── FooA.vue
-        │   ├── useFooA.ts
-        │   └── Index.vue
+        │   ├── FooChildren.vue
+        │   ├── Index.vue
+        │   └── useFoo.ts
         ├── Bar.vue
         └── Baz.vue
 ```
 
-```sh
+Tenga en cuenta que desde ahora `src/views/Foo.vue` será llamado `src/views/Foo/Index.vue`. Por lo que este cambio debe ser establecido en `src/router`.
+
+## `Foo/Index.vue` continua aumentando
+
+El componente padre necesita más componentes y composables hijos. 
+
+```sh{6,7,10,11}
 └── src/
     ├── router/
     └── views/
         └── Foo/
-        │   ├── FooA.vue
-        │   ├── FooB.vue
-        │   ├── FooC.vue
-        │   ├── useFooA.ts
-        │   ├── useFooB.ts
-        │   ├── useFooC.ts
-        │   └── Index.vue
+        │   ├── FooChildren.vue
+        │   ├── FooChildrenAnother.vue
+        │   ├── FooChildrenAnotherOne.vue
+        │   ├── Index.vue
+        │   ├── useFoo.ts
+        │   ├── useFooAnother.ts
+        │   └── useFooAnotherOne.ts
         ├── Bar.vue
         └── Baz.vue
 ```
 
-```sh
+¿Qué le parece si a continuación ponemos un poco más de orden?
+
+```sh{5,9}
 └── src/
     ├── router/
     └── views/
         ├── Foo/
         │   ├── components/
-        │   │   ├── FooA.vue
-        │   │   ├── FooB.vue
-        │   │   └── FooC.vue
+        │   │   ├── FooChildren.vue
+        │   │   ├── FooChildrenAnother.vue
+        │   │   └── FooChildrenAnotherOne.vue
         │   ├── composables/
-        │   │   ├── useFooA.ts
-        │   │   ├── useFooB.ts
-        │   │   └── useFooC.ts
+        │   │   ├── useFoo.ts
+        │   │   ├── useFooAnother.ts
+        │   │   └── useFooAnotherOne.ts
         │   └── Index.vue
         ├── Bar.vue
         └── Baz.vue
 ```
+Así lucirá desde afuera.
 
-```sh
+```sh{5,6}
 └── src/
     ├── router/
     └── views/
@@ -67,7 +87,9 @@
         └── Baz.vue
 ```
 
-```sh
+¡Genial! Ahora tenemos una estructura más organizada.
+
+```sh{4}
 └── src/
     ├── router/
     └── views/
