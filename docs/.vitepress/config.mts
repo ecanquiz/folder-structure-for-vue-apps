@@ -29,7 +29,8 @@ export default defineConfig({
         collapsed: false, 
 
         items: [
-          { text: 'El Enfoque', link: '/the-approach' }
+          { text: 'El Enfoque', link: '/the-approach' },
+          { text: 'La Práctica', link: '/the-practice' }
         ]
       }, {
         items: [
