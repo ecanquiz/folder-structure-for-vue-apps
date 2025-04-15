@@ -5,18 +5,23 @@ Para nuestro enfoque, partiremo de un pequeña aplicación que solo tiene 3 vist
 1. **`router/`**: Aquí configuraremos el sistema de rutas.
 2. **`views/`**: Aquí crearemos las vistas o páginas de nuestra aplicación.
 
-```sh{4,5,6}
+```sh{5,6,7}
 └── src/
     ├── router/
+        └── index.ts
     └── views/
         ├── Foo.vue
         ├── Bar.vue
         └── Baz.vue
 ```
 
-## El componente `Foo.vue` empieza a crecer
+:::tip Por ahora
+No necesitamos más carpetas, otras serán creadas en el momento que sea necesario.
+:::
 
-Supongamos que necesitamos refactorizar la vista `Foo.vue`, creando un componente hijo que llamaremos `FooChildren.vue`. Dicho componente **no es reutilizable** ya que solo es de utilidad para el componente padre.
+## Cuando el componente `Foo.vue` empieza a crecer
+
+Supongamos que necesitamos refactorizar la vista `Foo.vue` porque está empezando a crecer de tamaño el código fuente. Crearemos un componente hijo que llamaremos `FooChildren.vue` para desacoplar parte del ćodigo. Dicho componente **no es reutilizable** ya que solo es de utilidad para el componente padre.
 
 Igualmente, y como buena práctica, creamos el composable `useFoo.ts`, para separar la regla de negocio de la interfaz gráfica.
 
@@ -32,11 +37,11 @@ Igualmente, y como buena práctica, creamos el composable `useFoo.ts`, para sepa
         └── Baz.vue
 ```
 
-Tenga en cuenta que desde ahora `src/views/Foo.vue` será llamado `src/views/Foo/Index.vue`. Por lo que este cambio debe ser establecido en `src/router`.
+Tenga en cuenta que desde ahora `./src/views/Foo.vue` será llamado `./src/views/Foo/Index.vue`. Por lo que este cambio debe ser actualizado en el archivo `./src/router/index.ts`.
 
 ## `Foo/Index.vue` continua aumentando
 
-El componente padre necesita más componentes y composables hijos. 
+Ahora, el componente padre necesita más componentes y composables hijos. 
 
 ```sh{6,7,10,11}
 └── src/
@@ -54,7 +59,7 @@ El componente padre necesita más componentes y composables hijos.
         └── Baz.vue
 ```
 
-¿Qué le parece si a continuación ponemos un poco más de orden?
+Entonces, ¿qué le parece si a continuación ponemos un poco más de orden?
 
 ```sh{5,9}
 └── src/
@@ -98,7 +103,11 @@ Así lucirá desde afuera.
         └── Baz.vue
 ```
 
-```sh
+## Estructura Clásica
+
+La estructura clásica de un proyecto Vue.js es la siguiente:
+
+```sh{2,3}
 └── src/
     ├── components/
     ├── composables/
@@ -106,453 +115,63 @@ Así lucirá desde afuera.
     └── views/
 ```
 
-```sh
+>¿Pero, qué sentido le daremos ahora a las carpetas`./src/components` y `./src/composables`?
+
+## Código Reutilizable Globálmente
+
+En las carpetas`./src/components` y `./src/composables` colocaremos respectivamente solo los componentes y composables que pueden ser reutilizados por cualquiera de las vistas.
+
+```sh{3,4,5,6,7,9,10}
 └── src/
     ├── components/
-    │   ├── GlobalA.vue
-    │   ├── GlobalB/
-    │   │   ├── GlobalB1.vue
-    │   │   ├── GlobalB2.vue
+    │   ├── GlobalReusable/
+    │   │   ├── GlobalReusableChildren.vue
+    │   │   ├── GlobalReusableChildrenOther.vue
     │   │   └── Index.vue
-    │   └── GlobalC.vue
+    │   └── GlobalReusableOther.vue
     ├── composables/
-    │   ├── useGlobal1.ts
-    │   ├── useGlobal2.ts
-    │   └── useGlobal3.ts
+    │   ├── useGlobalReusable.ts
+    │   └── useGlobalReusableOther.ts
     ├── router/
     └── views/
 ```
 
+## Un Paso Más Allá
 
-```sh
+>Ahora que hemos llegado aquí, se preguntará...
+>
+>**¿Cómo quedará con la estructura modular?**.
+
+Echemos un vistazo a lo siguiente.
+
+```sh{4,5,7,8,14,15,16,17,19,20}
 └── src/
-    ├── components/
-    │   ├── SuperGlobalA.vue
-    │   ├── SuperGlobalB/
-    │   │   ├── SuperGlobalB1.vue
-    │   │   ├── SuperGlobalB2.vue
-    │   │   └── Index.vue
-    │   └── SuperGlobalC.vue
-    ├── composables/
-    │   ├── useSuperGlobal1.ts
-    │   ├── useSuperGlobal2.ts
-    │   └── useSuperGlobal3.ts
-    ├── router/
+    ├── core/
+    │   ├── components/
+    │   │   ├── GlobalReusable/
+    │   │   └── GlobalReusableOther.vue
+    │   ├── composables/
+    │   │   ├── useGlobalReusable.ts
+    │   │   └── useGlobalReusableOther.ts
+    │   └── router/    
     └── modules/
         ├── ModuleA
         ├── ModuleB
         │    ├── components/
-        │    │   ├── GlobalA.vue
-        │    │   ├── GlobalB/
-        │    │   │   ├── GlobalB1.vue
-        │    │   │   ├── GlobalB2.vue
+        │    │   ├── OnlyReusableByModuleB/
+        │    │   │   ├── OnlyReusableByModuleBChildren.vue
         │    │   │   └── Index.vue
-        │    │   └── GlobalC.vue
+        │    │   └── OnlyReusableByModuleBOther.vue
         │    ├── composables/
-        │    │   ├── useGlobal1.ts
-        │    │   ├── useGlobal2.ts
-        │    │   └── useGlobal3.ts
+        │    │   ├── useOnlyReusableByModuleB.ts
+        │    │   └── useOnlyReusableByModuleBOther.ts
         │    ├── routes/
         │    └── views/
         │       ├── Foo/
-        │       │   ├── components/
-        │       │   │    ├── FooA.vue
-        │       │   │    ├── FooB.vue
-        │       │   │    └── FooC.vue
-        │       │   ├── composables/
-        │       │   │   ├── useFooA.ts
-        │       │   │   ├── useFooB.ts
-        │       │   │   └── useFooC.ts
-        │       │   └── Index.vue
         │       ├── Bar.vue
         │       └── Baz.vue
         └── ModuleC
-
-
 ```
 
-```sh
-└── src/
-    ├── router/
-    └── views/
-        ├── Foo/
-        ├── Bar.vue
-        └── Baz.vue
-```
+Analizaremos los pros y los contras...
 
-```sh
-└── src/
-    ├── components/ 
-    ├── composables/
-    └── views/
-        ├── foo/
-        ├── bar/
-        └── baz/
-```
-
-
-
-
-
-```sh{3,4,5}
-└── src/
-    ├── core/
-    │   ├── assets/
-    │   │   ├── css/
-    │   │   └── images/
-    │   ├── components/
-    │   ├── composables/
-    │   ├── middleware/
-    │   ├── router/
-    │   ├── types/
-    │   └── utils/
-    └── modules/
-```
-
-```sh{4,5,6,7,8,9,10,11,12,13}
-└── src/
-    ├── core/
-    │   ├── assets/
-    │   ├── components/
-    │   │   ├── app/
-    │   │   │   ├── Input.vue
-    │   │   │   ├── Pagination.vue
-    │   │   │   ├── Select.vue
-    │   │   │   └── Textarea.vue    
-    │   │   ├── icons/
-    │   │   │   ├── foo.vue
-    │   │   │   └── bar.vue  
-    │   │   └── layouts/ 
-    │   ├── composables/
-    │   ├── middleware/
-    │   ├── router/
-    │   ├── types/
-    │   └── utils/
-    └── modules/
-```
-
-```sh{7,8,9,10,11,12,13,14,15}
-└── src/
-    ├── core/
-    │   ├── assets/
-    │   ├── components/
-    │   │   ├── app/
-    │   │   ├── icons/
-    │   │   └── layouts/
-    │   │       ├── Emtpy.vue
-    │   │       └── Default/
-    │   │           └── components/
-    │   │           │   ├── Footer.vue
-    │   │           │   ├── Header.vue
-    │   │           │   ├── Navbar.vue
-    │   │           │   └── Sidebar.vue
-    │   │           └── Index.vue
-    │   ├── composables/
-    │   ├── middleware/
-    │   ├── router/
-    │   ├── types/
-    │   └── utils/
-    └── modules/
-```
-
-```sh{2,3,5,6,7}
-└── Default/
-    ├── Footer.vue
-    ├── Header.vue
-    ├── Index.vue
-    ├── Navbar.vue
-    └── Sidebar.vue
-```
-
-```sh{2,3,4,5,6}
-└── Default/
-    ├── components/
-    │   ├── Footer.vue
-    │   ├── Header.vue
-    │   ├── Navbar.vue
-    │   └── Sidebar.vue
-    └── Index.vue
-```
-
-```sh{2}
-└── Default/
-    ├── components/
-    └── Index.vue
-```
-
-```sh{6,7,8}
-└── src/
-    ├── core/
-    │   ├── assets/
-    │   ├── components/
-    │   │   ├── app/
-    │   │   │   ├── Input/
-    │   │   │   │   ├── __tests__/
-    │   │   │   │   └── Index.vue 
-    │   │   │   ├── Pagination.vue
-    │   │   │   ├── Select.vue
-    │   │   │   └── Textarea.vue    
-    │   │   ├── icons/
-    │   │   └── layouts/
-    │   ├── composables/
-    │   ├── middleware/
-    │   ├── router/
-    │   ├── types/
-    │   └── utils/
-    └── modules/
-```
-
-```sh
-├── Input/
-│   ├── __tests__/
-│   ├── composables/
-│   │   └── useInput.ts
-│   └── Index.vue 
-```
-
-
-```sh
-├── Input
-│   ├── __tests__/
-│   ├── composables/
-│   │   ├── __tests__/
-│   │   └── useInput.ts
-│   └── Index.vue 
-```
-
-```sh{6}
-└── src/
-    ├── core/
-    │   ├── assets/
-    │   ├── components/
-    │   ├── composables/
-    │   ├── layouts/
-    │   ├── middleware/
-    │   ├── router/
-    │   ├── types/
-    │   └── utils/
-    └── modules/
-```
-
-```sh{5,6,7,8,9}
-└── src/
-    ├── core/
-    │   ├── assets/
-    │   ├── components/
-    │   ├── composables/
-    │   │   ├── __tests__/
-    │   │   ├── useFoo/
-    │   │   ├── useBar.ts
-    │   │   └── useBaz.ts
-    │   ├── middleware/
-    │   ├── router/
-    │   ├── types/
-    │   └── utils/
-    └── modules/
-```
-
-```sh{7,8,9,10}
-└── src/
-    ├── core/
-    │   ├── assets/
-    │   ├── components/
-    │   ├── composables/
-    │   │   ├── __tests__/
-    │   │   ├── useFoo/
-    │   │   │   ├── useFooA.ts
-    │   │   │   ├── useFooB.ts
-    │   │   │   └── index.ts
-    │   │   ├── useBar.ts
-    │   │   └── useBaz.ts
-    │   ├── middleware/
-    │   ├── router/
-    │   ├── types/
-    │   └── utils/
-    └── modules/
-```
-
-```sh{6,7,8,9}
-└── src/
-    ├── core/
-    │   ├── assets/
-    │   ├── components/
-    │   ├── composables/
-    │   │   ├── __tests__/
-    │   │   │   ├── useFoo.spec.ts
-    │   │   │   ├── useBar.spec.ts
-    │   │   │   └── useBaz.spec.ts
-    │   │   ├── useFoo/
-    │   │   ├── useBar.ts
-    │   │   └── useBaz.ts
-    │   ├── middleware/
-    │   ├── router/
-    │   ├── types/
-    │   └── utils/
-    └── modules/
-```
-
-```sh{8,9,10,11,12}
-└── src/
-    ├── core/
-    │   ├── assets/
-    │   ├── components/
-    │   ├── composables/
-    │   │   ├── __tests__/
-    │   │   ├── useFoo/
-    │   │   │   ├── __tests__/
-    │   │   │   │   ├── useFooA.spec.ts
-    │   │   │   │   └── useFooB.spec.ts
-    │   │   │   ├── useFooA.ts
-    │   │   │   ├── useFooB.ts
-    │   │   │   └── index.ts
-    │   │   ├── useBar.ts
-    │   │   └── useBaz.ts
-    │   ├── middleware/
-    │   ├── router/
-    │   ├── types/
-    │   └── utils/
-    └── modules/
-```
-
-```sh{7,8,9,11,12,14,15,16,18,19}
-└── src/
-    ├── core/
-    │   ├── assets/
-    │   ├── components/
-    │   ├── composables/
-    │   ├── middleware/
-    │   │   ├── admin.ts
-    │   │   ├── auth.ts
-    │   │   └── guest.ts
-    │   ├── router/
-    │   │   ├── index.ts
-    │   │   └── middlewarePipeline.ts
-    │   ├── types/
-    │   │   ├── custom.ts
-    │   │   ├── index.ts
-    │   │   └── generic.ts
-    │   └── utils/
-    │   │   │   ├── helpers.ts
-    │   │   │   └── libs.ts
-    └── modules/
-```
-
-```sh{3,4,5}
-└── src/
-    ├── core/
-    └── modules/
-        ├── Auth/
-        └── User/
-```
-
-```sh{4,5,6,7,8,9,10}
-└── src/
-    ├── core/
-    └── modules/
-        ├── Auth/
-        │   ├── components/
-        │   ├── router/
-        │   ├── services/
-        │   ├── stores/
-        │   ├── types/
-        │   └── views/
-        └── User/
-```
-
-```sh{5,6,7,8,9}
-└── src/
-    ├── core/
-    └── modules/
-        ├── Auth/
-        └── User/
-            ├── router/
-            ├── services/
-            ├── types/
-            └── views/
-```
-
-
-
-This page demonstrates some of the built-in markdown extensions provided by VitePress.
-
-## Syntax Highlighting
-
-VitePress provides Syntax Highlighting powered by [Shiki](https://github.com/shikijs/shiki), with additional features like line-highlighting:
-
-**Input**
-
-````md
-```js{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
-```
-````
-
-**Output**
-
-```js{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
-```
-
-## Custom Containers
-
-**Input**
-
-```md
-::: info
-This is an info box.
-:::
-
-::: tip
-This is a tip.
-:::
-
-::: warning
-This is a warning.
-:::
-
-::: danger
-This is a dangerous warning.
-:::
-
-::: details
-This is a details block.
-:::
-```
-
-**Output**
-
-::: info
-This is an info box.
-:::
-
-::: tip
-This is a tip.
-:::
-
-::: warning
-This is a warning.
-:::
-
-::: danger
-This is a dangerous warning.
-:::
-
-::: details
-This is a details block.
-:::
-
-## More
-
-Check out the documentation for the [full list of markdown extensions](https://vitepress.dev/guide/markdown).
