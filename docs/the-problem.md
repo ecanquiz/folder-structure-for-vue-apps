@@ -1,8 +1,6 @@
 # El Problema
 
->Supongamos que vamos a revisar la página de **Iniciar Sesión** para depurar nuestro código. 
-
-Entremos en la carpeta `src/modules/Auth/views/` y seleccionemos el archivo `Login.vue`.
+>Supongamos que vamos a revisar la página de Iniciar Sesión para depurar nuestro código. Entramos en la carpeta `src/modules/Auth/views/` y seleccionamos el archivo `Login.vue`.
 
 ```sh{14}
 └── src/
@@ -23,7 +21,8 @@ Entremos en la carpeta `src/modules/Auth/views/` y seleccionemos el archivo `Log
         │       └── Register.vue
         └── User/
 ```
-Al editarlo nos encontraremos con un [SFC](https://vuejs.org/guide/scaling-up/sfc) parecido al siguiente.
+
+Al editarlo, nos encontramos con un [SFC](https://vuejs.org/guide/scaling-up/sfc) _(Single File Component)_ parecido al siguiente:
 
 ```vue{2,3}
 <script setup lang="ts">  
@@ -118,23 +117,21 @@ Tenga en cuenta que `Login.vue` importa dos (2) archivos:
 
 Afortunadamente nuestro código ya está ordenado por módulos. En este caso, todo lo que necesitamos revisar está ubicado en el módulo `Auth`.
 
->Pero, si este modulo tuviera más vistas, mas componentes, más composables y desplegáramos las otras correspondientes carpetas que lo conforman. **_¿No le parece demasiado abrumador la distante separación entre estos tres archivos que evidentemente conciernen a la misma funcionalidad?_**
+>Sin embargo, si este módulo tuviera más vistas, más componentes y más composables, la separación entre estos tres archivos que evidentemente conciernen a la misma funcionalidad podría resultar abrumadora.
+
+## Preguntas
 
 Tomando en cuenta que estos archivos no son reutilizables, nos preguntamos:
 
 - ¿En esta estructura de carpetas, prevalece el tipo de archivo por encima de la particular regla de negocio a la que concierne?
 
-- ¿Es suficiente agrupar los archivos por módulos y luego por el tipo de archivos? 
-  > En este caso, para clasificarlos, nos obliga a colocarle un prefijo (o sufijo) para relacionarlo con el correspondiente componente padre, y así no confundir por ejemplo: `FormLogin.vue` con `FormRegister.vue`. 
+- ¿Es suficiente agrupar los archivos por módulos y luego por el tipo de archivos?
+> En este caso, para clasificarlos, nos obliga a colocarles un prefijo (o sufijo) para relacionarlos con el correspondiente componente padre, y así no confundir, por ejemplo, `FormLogin.vue` con `FormRegister.vue`.
 
 - ¿Es necesario que estén tan separados entre ellos, `Login.vue`, `FormLogin` y `useLogin.ts`, respectivamente?
 
 - ¿Qué sucederá cuando la aplicación empiece a escalar con más archivos y más módulos?
 
-
 ---
 
-
 >**A continuación**, exploraremos alternativas para intentar mejorar una estructura de carpetas de archivos más cómoda, flexible y escalable.
-
-

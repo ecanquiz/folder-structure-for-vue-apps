@@ -1,6 +1,6 @@
 #  Cuando la Aplicación Crece
 
-Generalmente sucede que a medida que el proyecto avanza, comenzamos a necesitar carpetas adicionales de agrupación.
+A medida que un proyecto avanza, es común que surja la necesidad de crear carpetas adicionales para organizar mejor los archivos y componentes. Una estructura más compleja puede verse así:
 
 ```sh{5,,6,8,9,10,11}
 └── src/
@@ -17,7 +17,6 @@ Generalmente sucede que a medida que el proyecto avanza, comenzamos a necesitar 
     └── views/
 ```
 
-::: tip Tenga en cuenta que
-Por convensión, la carpeta `layouts/` puede que sea llamada `themes/`. Así como la carpeta `services/` puede ser llamada `apis/`. Y también, la carpeta `utils/` puede ser llamada `libs`. Las distintas denominaciones son cuestiones de forma más no de fondo. El equipo de desarrollo desidirá cuál nombre colocarle.
+::: tip
+Es importante tener en cuenta que, por convención, la carpeta `layouts/` puede denominarse `themes/`, la carpeta `services/` puede ser llamada `apis/`, y `utils/` puede ser conocida como `libs/`. Estas variaciones en la nomenclatura son cuestiones de preferencia y no afectan la funcionalidad. La elección del nombre debe ser consensuada por el equipo de desarrollo.
 :::
-

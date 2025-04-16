@@ -1,12 +1,14 @@
 # Estructuras de Carpetas
 
->La estructura de carpetas organiza los archivos y componentes de la aplicación. Esta no define ni influye en la funcionalidad del mismo, ya que esa tarea depende de la lógica del código fuente. 
+La estructura de carpetas es fundamental para organizar los archivos y componentes de una aplicación. 
 
-Una estructura de carpetas clara mejora significativamente la legibilidad y escalabilidad del proyecto.
+>Aunque no influye directamente en la funcionalidad del proyecto, que depende de la lógica del código fuente, una estructura bien definida mejora notablemente la legibilidad y escalabilidad del mismo.
+
+
 
 ## Estructuras Básica
 
-A continuación se muestra ejemplo, por convención, de la estructura básica de carpetas de un proyecto Vue.
+A continuación, se presenta un ejemplo de la estructura básica de carpetas de un proyecto Vue, siguiendo convenciones comunes:
 
 ```sh
 └── src/
@@ -17,7 +19,7 @@ A continuación se muestra ejemplo, por convención, de la estructura básica de
     └── views/
 ```
 
-::: tip Tenga en cuenta que
-La carpeta `views/` puede que sea llamada `pages/`. Las distintas denominaciones son cuestiones de forma más no de fondo. El equipo de desarrollo desidirá cuál nombre colocarle.
+::: tip
+Es importante señalar que la carpeta `views/` también puede denominarse `pages/`. Estas variaciones en la nomenclatura son cuestiones de preferencia y no afectan la funcionalidad. La decisión sobre el nombre a utilizar debe ser consensuada por el equipo de desarrollo.
 :::
 
