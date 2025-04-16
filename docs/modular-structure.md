@@ -1,7 +1,6 @@
 # Estructura Modular
 
-Con la inevitable escalada del proyecto es recomendable que sus carpetas sean transformadas en una **estructura modular**.
-
+Con el inevitable crecimiento del proyecto, es recomendable adoptar una **estructura modular** para las carpetas.
 
 ```sh{4,5,6,7,8,9,10}
 ├── src/
@@ -18,11 +17,11 @@ Con la inevitable escalada del proyecto es recomendable que sus carpetas sean tr
         └── ModuleC/
 ```
 
->Una **estructura modular** de carpetas organiza el proyecto en módulos independientes, cada uno con su propia base de código fuente. Esto facilita la organización del programa. 
+>Una **estructura modular** organiza el proyecto en módulos independientes, cada uno con su propia base de código. Esto facilita la gestión y organización del programa.
 
 ## Ejemplo Real
 
-Organicemos nuestro código fuente en dos módulos con lo concerniente a la lógica de **Autenticación** separada del CRUD de **Usuarios**.
+Imaginemos que organizamos nuestro código en dos módulos, separando la lógica de **autenticación** del CRUD de **usuarios**:
 
 
 ```sh{19,20,21,22,23,32,33}
@@ -63,17 +62,17 @@ Organicemos nuestro código fuente en dos módulos con lo concerniente a la lóg
 └── tests/
 ```
 
-Tenga en cuenta como podemos visualizar claramente la ubicación de los archivos según su funcionalidad separando la estructura del código fuente por módulos.
+Esta organización permite visualizar claramente la ubicación de los archivos según su funcionalidad, separando la estructura del código en módulos.
 
-::: info Tenga en cuenta
-En la carpeta `tests/` se crean los archivos de pruebas, es factible que estos archivos sean organizados con una estructura parecida a la carpeta `src/`.
+::: info 
+Es importante mencionar que, aunque se puede crear una carpeta `tests/` para los archivos de prueba, hay objeciones a esta práctica. Muchos desarrolladores prefieren crear carpetas dentro de `src/`, como `__tests__/` o `__mocks__`/, y este tema será tratado en el apartado de las Carpetas de Pruebas.
 :::
 
 ## Código Genérico
 
->Como habrá notado, aún hay una parte de nuestro código que continua desagrupado. Se trata del nuestro código general reutilizable, el que necesariamente importamos para muchos casos de uso.
+>Aún hay una parte de nuestro código que permanece desagrupada: el **código genérico** reutilizable, que se importa en múltiples casos de uso.
 
-El código genérico lo colocaremos en una carpeta al mismo nivel de la carpeta `modules/` y esta carpeta será denominada `core/`.
+Para organizarlo, podemos crear una carpeta al mismo nivel que `modules/`, denominada `core/`.
 
 ```sh{3,4,5,6,7,8,9}
 └── src/
@@ -88,11 +87,11 @@ El código genérico lo colocaremos en una carpeta al mismo nivel de la carpeta 
     └── modules/
 ```
 
->Siéntase libre de llamar esta carpeta como usted o su equipo guste. Por ejemplo, `main/`, `base/`, `centra/`, `general/`, etc. Recuerde: _"Las distintas denominaciones son cuestiones de forma más no de fondo"_. Aunque, es recomendable siempre consultar estas convenciones con su equipo de desarrollo.
+>Siéntase libre de nombrar esta carpeta como prefiera su equipo, por ejemplo, `main/`, `base/`, `central/`, `general/`, etc. Recuerde: _"Las distintas denominaciones son cuestiones de forma más no de fondo"_. Es recomendable consultar estas convenciones con su equipo de desarrollo.
 
 ## Código Organizado
 
-Indudablemente que ahora nuestro código luce más organizado.
+Con esta estructura, nuestro código se ve mucho más organizado:
 
 ```sh
 └── src/
@@ -100,6 +99,6 @@ Indudablemente que ahora nuestro código luce más organizado.
     └── modules/
 ```
 
-::: warning Pero, surge una pregunta
-¿Es la **estructura modular** una práctica suficiente para eliminar toda la complejidad de organizar tantos archivos facilitando el desarrollo, depuración, mantenimiento y la escalabilidad del proyecto?
-:::
+## Ok pero, surge una pregunta
+
+>**¿Es la estructura modular una práctica suficiente para eliminar toda la complejidad de organizar tantos archivos, facilitando el desarrollo, la depuración, el mantenimiento y la escalabilidad del proyecto?**
