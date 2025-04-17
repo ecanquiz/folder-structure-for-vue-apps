@@ -1,0 +1,1 @@
+import{_ as i,c as a,o as n,ae as h}from"./chunks/framework.oSdz25v6.js";const r=JSON.parse('{"title":".src/layaouts/","description":"","frontmatter":{},"headers":[],"relativePath":"layouts.md","filePath":"layouts.md"}'),l={name:"layouts.md"};function k(p,s,t,F,e,d){return n(),a("div",null,s[0]||(s[0]=[h("",38)]))}const y=i(l,[["render",k]]);export{r as __pageData,y as default};
