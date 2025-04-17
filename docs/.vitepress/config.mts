@@ -30,7 +30,10 @@ export default defineConfig({
 
         items: [
           { text: 'El Enfoque', link: '/the-approach' },
-          { text: 'La Práctica', link: '/the-practice' }
+          { text: 'La Práctica', link: '/the-practice' },
+          { text: 'Componentes', link: '/components' },
+          { text: 'Diseños', link: '/layouts' },
+
         ]
       }, {
         items: [

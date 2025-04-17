@@ -203,7 +203,7 @@ Echemos un vistazo a la siguiente estructura:
 
 ## Resumen
 
-El enfoque propuesto para la organización de un proyecto Vue.js va más allá de la simple estructura modular, incorporando la anidación de componentes y composables dentro de las vistas según su propósito. Esta metodología permite una agrupación lógica de archivos relacionados, facilitando la navegación y la comprensión del código. Al mantener los componentes y composables específicos dentro de sus respectivas vistas, se establece una clara exclusividad y se fomenta la reutilización de aquellos que son globales.
+Este enfoque propuesto para la organización de un proyecto Vue.js va más allá de la simple estructura modular, incorporando la anidación de componentes y composables dentro de las vistas según su propósito. Esta metodología permite una agrupación lógica de archivos relacionados, facilitando la navegación y la comprensión del código. Al mantener los componentes y composables específicos dentro de sus respectivas vistas, se establece una clara exclusividad y se fomenta la reutilización de aquellos que son globales.
 
 Sin embargo, este enfoque también presenta desafíos, como la necesidad de refactorizar la estructura cuando se identifican componentes reutilizables y la posible complejidad en proyectos grandes. A pesar de estos contras, la capacidad de centrarse en una vista específica y cerrar las carpetas no relevantes ayuda a mitigar la complejidad.
 
