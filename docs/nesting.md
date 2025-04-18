@@ -1,21 +1,6 @@
-# El Enfoque
+# Anidamiento
 
-Para nuestro enfoque, partiremos de una pequeña aplicación que solo tiene 3 vistas o páginas. Comenzaremos creando dos carpetas correspondientes:
-
-1. **`router/`**: Aquí configuraremos el sistema de rutas.
-2. **`views/`**: Aquí crearemos las vistas o páginas de nuestra aplicación.
-
-```sh{5,6,7}
-└── src/
-    ├── router/
-        └── index.ts
-    └── views/
-        ├── Foo.vue
-        ├── Bar.vue
-        └── Baz.vue
-```
-
->Por ahora, no necesitamos más carpetas; otras serán creadas en el momento que sea necesario.
+>En este apartado exploraremos una técnica estructural de **anidamiento de carpetas** de componentes y composables.
 
 ## Cuando el componente `Foo.vue` empieza a crecer
 
@@ -42,10 +27,6 @@ Tanto `Children.vue` como `useFoo.ts` pertenecen únicamente a `./src/views/Foo/
 :::tip
 Tenga en cuenta que desde ahora `./src/views/Foo.vue` será llamado `./src/views/Foo/Index.vue`. Por lo tanto, este cambio debe ser actualizado en el archivo `./src/router/index.ts`.
 :::
-
-## `Foo/Index.vue` continua aumentando
-
-Ahora, el componente padre necesita más componentes y composables hijos.
 
 ## `Foo/Index.vue` continúa aumentando
 

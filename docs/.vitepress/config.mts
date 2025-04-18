@@ -29,13 +29,26 @@ export default defineConfig({
         collapsed: false, 
 
         items: [
-          { text: 'El Enfoque', link: '/the-approach' },
-          { text: 'La Práctica', link: '/the-practice' },
+          { text: 'Enfoque', link: '/approach' },
+          { text: 'Anidamiento', link: '/nesting' },
+          { text: 'No Anidamiento', link: '/no-nesting' }
+
+
+        ]
+      }, {
+        text: 'Ejemplo Prácticos',
+        sidebarDepth: 1,    // optional, defaults to 1
+        collapsible: true,
+        collapsed: false, 
+
+        items: [
           { text: 'Componentes', link: '/components' },
           { text: 'Diseños', link: '/layouts' },
 
         ]
-      }, {
+      }
+      
+      , {
         items: [
           { text: 'Runtime API Examples', link: '/api-examples' }
         ]
