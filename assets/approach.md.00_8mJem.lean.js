@@ -1,0 +1,1 @@
+import{_ as a,c as e,o as i,ae as n}from"./chunks/framework.oSdz25v6.js";const k=JSON.parse('{"title":"Enfoque","description":"","frontmatter":{},"headers":[],"relativePath":"approach.md","filePath":"approach.md"}'),t={name:"approach.md"};function o(l,s,p,r,h,c){return i(),e("div",null,s[0]||(s[0]=[n("",6)]))}const u=a(t,[["render",o]]);export{k as __pageData,u as default};
