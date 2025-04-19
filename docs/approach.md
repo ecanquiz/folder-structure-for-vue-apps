@@ -10,7 +10,7 @@ Comenzaremos creando dos carpetas correspondientes:
 ```sh{5,6,7}
 └── src/
     ├── router/
-        └── index.ts
+    │   └── index.ts
     └── views/
         ├── Foo.vue
         ├── Bar.vue

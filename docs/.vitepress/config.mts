@@ -3,12 +3,12 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Carpetas Vue-Apps",
-  description: "Vue Apps",
+  description: "For Vue Apps",
   base: '/folder-structure-for-vue-apps/', //  The default path during deployment / secondary address / base can be used/
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: '/mylogo.png',
-    siteTitle: 'Vue Apps',
+    siteTitle: 'For Vue Apps',
     nav: [
       { text: 'Inicio', link: '/' },
       { text: 'Comenzar', link: '/folder-structures' },

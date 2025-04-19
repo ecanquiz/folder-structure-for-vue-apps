@@ -1,5 +1,9 @@
 # `./src/core/components/`
 
+En esta sección, realizaremos un ejercicio práctico con un componente genérico reutilizable que tiene un componente secundario que no es reutilizable por sí solo.
+
+>Es el caso del componente `RadioGroup.vue`. Este componente tiene un componente `Radio.vue`, que por sí solo es inútil.
+
 ```sh{16,17}
 └── src/
     ├── core/
@@ -29,6 +33,10 @@
     │   └── utils/
     └── modules/
 ```
+
+Dado que el componente `Radio.vue` es inútil por sí solo, lo encapsularemos en una carpeta llamada `./src/core/components/RadiGroup/`.
+
+También moveremos el componente `RadiGroup.vue` dentro de esta carpeta y lo renombraremos `Index.vue`.
 
 ```sh{16,17,18}
 └── src/
@@ -61,6 +69,21 @@
     └── modules/
 ```
 
+:::tip
+Asegúrese de realizar las actualizaciones respectivas donde se importó este componente.
+```vue{3,4}
+<script setup lang="ts">
+// ...
+// import AppRadioGroup from "./core/components/app/RadioGroup.vue"
+import AppRadioGroup from "./core/components/app/RadioGroup/Index.vue"
+
+// ...
+</script>
+```
+:::
+
+Ahora, veamos como luce cuando el componente `RadioGroup/` está cerrado.
+
 ```sh{16}
 └── src/
     ├── core/
@@ -90,3 +113,4 @@
     └── modules/
 ```
 
+>¡Genial! Ahora se ve más limpio.
