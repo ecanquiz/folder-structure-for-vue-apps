@@ -81,7 +81,7 @@ Así lucirá desde afuera.
         └── Baz.vue
 ```
 
-¡Genial! Ahora tenemos una estructura más organizada.
+>¡Genial! Ahora tenemos una estructura más organizada.
 
 ```sh{4}
 └── src/

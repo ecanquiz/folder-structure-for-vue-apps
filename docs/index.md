@@ -3,26 +3,27 @@
 layout: home
 
 hero:
-  name: "Vue Apps"
-  text: "Estructura de Carpetas"
-  tagline: Cómo ordenar el código frontend
+  name: "Estructura de Carpetas"
+  text: "For Vue Apps"
+  tagline: Cómo organizar el código frontend
   image:
     src: /logo.png
     alt: VitePress
   actions:
     - theme: brand
-      text: Markdown Examples
+      text: Comenzar
       link: /folder-structures
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: ecanquiz
+      link: https://ecanquiz.github.io/
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Una estructura de carpetas
+    details: Es fundamental para organizar los archivos de una aplicación
+  - title: Bien definida
+    details: Mejora notablemente la legibilidad y escalabilidad del proyecto
+  - title: El enfoque modular anidado
+    details: Proporciona una base sólida para el desarrollo de aplicaciones
+  - title: Organización y claridad en el código
+    details: Requiere una atención cuidadosa a medida que el desarrollo evoluciona
 ---
-
