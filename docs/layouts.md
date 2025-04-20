@@ -1,4 +1,8 @@
-# `.src/layaouts/`
+# Diseños
+
+>Los componentes que están en la carpeta `.src/core/layouts/`.
+
+Ahora, haremos un ejemplo práctico con la carpeta que alberga el layout de nuestra aplicación.
 
 ```sh{6}
 └── src/
@@ -13,6 +17,12 @@
     │   └── utils/
     └── modules/
 ```
+
+## A simple vista
+
+Si desplegamos la carpeta `.src/core/layouts/` y nos preguntamos:
+
+>**¿Cuantos diseños hay?**
 
 ```sh{7,8,9,10,11,12,13}
 └── src/
@@ -36,6 +46,8 @@
     └── modules/
 ```
 
+Después de leer uno a uno los archivos que están en la carpeta `.src/core/layouts/`, semánticamente deducimos que son tres: `Custom.vue`, `Default.vue` y `Emtpy.vue`.
+
 ```sh{7,8,9}
 └── src/
     ├── core/
@@ -54,7 +66,9 @@
     └── modules/
 ```
 
+>¿A quién pertenecen los componentes hijos respectivamente?
 
+Supongamos que todos los componentes hijos pertenecen a `Default.vue`.
 
 ```sh{9,10,11,12,13,14}
 └── src/
@@ -79,6 +93,12 @@
     └── modules/
 ```
 
+:::tip 
+Tenga en cuenta que los componentes hijos `Footer.vue`, `Header.vue`, `Navbar.vue` y `Sidebar.vue` solo pueden ser hijos del componente `Default/Index.vue`. 
+:::
+
+Si lo desea, podemos ser más disciplinados.
+
 ```sh{8,9,10,11,12,13,14}
 └── src/
     ├── core/
@@ -102,6 +122,8 @@
     └── modules/
 ```
 
+Entonces, se verá así.
+
 ```sh{8,9,10}
 └── src/
     ├── core/
@@ -120,6 +142,11 @@
     │   └── utils/
     └── modules/
 ```
+
+## Componentes Reutilizables
+
+Los componentes hijos `Footer.vue`, `Header.vue`, `Navbar.vue` y `Sidebar.vue` solo pueden ser hijos compartidos dentro de la carpeta `./src/core/layouts`. Por lo que no tiene sentido colocarlos dentro de la carpeta  `./src/core/components`. Veamos un ejemplo.
+
 
 ```sh{7,8,10,11,15,16}
 └── src/
@@ -146,6 +173,12 @@
     │   └── utils/
     └── modules/
 ```
+
+>En el ejemplo anterior, los componentes hijos `Footer.vue` y `Header.vue` son reutilizados por los componentes padres `Custom/Index.vue` y `Default/Index.vue` respectivamente.
+
+Sin embargo, cada uno posee sus correspondientes hijos `Navbar.vue` y `Sidebar.vue` que les corresponden.
+
+Si lo desea, podemos ser más disciplinados.
 
 ```sh{7,8,9,11,12,13,17,18,19}
 └── src/
@@ -176,6 +209,9 @@
     └── modules/
 ```
 
+Entonces, se verá así.
+
+
 ```sh{7,8,9,11,15}
 └── src/
     ├── core/
@@ -200,6 +236,7 @@
     │   └── utils/
     └── modules/
 ```
+Y así.
 
 ```sh{7}
 └── src/
@@ -220,232 +257,8 @@
     └── modules/
 ```
 
----
-
-
-
-
-
-
-```sh{5,6,7,8,9}
-└── src/
-    ├── core/
-    │   ├── assets/
-    │   ├── components/
-    │   ├── composables/
-    │   │   ├── __tests__/
-    │   │   ├── useFoo/
-    │   │   ├── useBar.ts
-    │   │   └── useBaz.ts
-    │   ├── middleware/
-    │   ├── router/
-    │   ├── types/
-    │   └── utils/
-    └── modules/
-```
-
-```sh{7,8,9,10}
-└── src/
-    ├── core/
-    │   ├── assets/
-    │   ├── components/
-    │   ├── composables/
-    │   │   ├── __tests__/
-    │   │   ├── useFoo/
-    │   │   │   ├── useFooA.ts
-    │   │   │   ├── useFooB.ts
-    │   │   │   └── index.ts
-    │   │   ├── useBar.ts
-    │   │   └── useBaz.ts
-    │   ├── middleware/
-    │   ├── router/
-    │   ├── types/
-    │   └── utils/
-    └── modules/
-```
-
-```sh{6,7,8,9}
-└── src/
-    ├── core/
-    │   ├── assets/
-    │   ├── components/
-    │   ├── composables/
-    │   │   ├── __tests__/
-    │   │   │   ├── useFoo.spec.ts
-    │   │   │   ├── useBar.spec.ts
-    │   │   │   └── useBaz.spec.ts
-    │   │   ├── useFoo/
-    │   │   ├── useBar.ts
-    │   │   └── useBaz.ts
-    │   ├── middleware/
-    │   ├── router/
-    │   ├── types/
-    │   └── utils/
-    └── modules/
-```
-
-```sh{8,9,10,11,12}
-└── src/
-    ├── core/
-    │   ├── assets/
-    │   ├── components/
-    │   ├── composables/
-    │   │   ├── __tests__/
-    │   │   ├── useFoo/
-    │   │   │   ├── __tests__/
-    │   │   │   │   ├── useFooA.spec.ts
-    │   │   │   │   └── useFooB.spec.ts
-    │   │   │   ├── useFooA.ts
-    │   │   │   ├── useFooB.ts
-    │   │   │   └── index.ts
-    │   │   ├── useBar.ts
-    │   │   └── useBaz.ts
-    │   ├── middleware/
-    │   ├── router/
-    │   ├── types/
-    │   └── utils/
-    └── modules/
-```
-
-```sh{7,8,9,11,12,14,15,16,18,19}
-└── src/
-    ├── core/
-    │   ├── assets/
-    │   ├── components/
-    │   ├── composables/
-    │   ├── middleware/
-    │   │   ├── admin.ts
-    │   │   ├── auth.ts
-    │   │   └── guest.ts
-    │   ├── router/
-    │   │   ├── index.ts
-    │   │   └── middlewarePipeline.ts
-    │   ├── types/
-    │   │   ├── custom.ts
-    │   │   ├── index.ts
-    │   │   └── generic.ts
-    │   └── utils/
-    │   │   │   ├── helpers.ts
-    │   │   │   └── libs.ts
-    └── modules/
-```
-
-```sh{3,4,5}
-└── src/
-    ├── core/
-    └── modules/
-        ├── Auth/
-        └── User/
-```
-
-```sh{4,5,6,7,8,9,10}
-└── src/
-    ├── core/
-    └── modules/
-        ├── Auth/
-        │   ├── components/
-        │   ├── router/
-        │   ├── services/
-        │   ├── stores/
-        │   ├── types/
-        │   └── views/
-        └── User/
-```
-
-```sh{5,6,7,8,9}
-└── src/
-    ├── core/
-    └── modules/
-        ├── Auth/
-        └── User/
-            ├── router/
-            ├── services/
-            ├── types/
-            └── views/
-```
-
-
-
-This page demonstrates some of the built-in markdown extensions provided by VitePress.
-
-## Syntax Highlighting
-
-VitePress provides Syntax Highlighting powered by [Shiki](https://github.com/shikijs/shiki), with additional features like line-highlighting:
-
-**Input**
-
-````md
-```js{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
-```
-````
-
-**Output**
-
-```js{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
-```
-
-## Custom Containers
-
-**Input**
-
-```md
-::: info
-This is an info box.
-:::
-
 ::: tip
-This is a tip.
+Los componentes hijos que están dentro de la carpeta `./src/core/layouts/componentes/` solo pertenecen a los componentes padres de la carpeta `./src/core/layouts/`.
+
+No tiene sentido colocarlos lejos creando una carpeta `./src/core/components/layouts/` para ese propósito.
 :::
-
-::: warning
-This is a warning.
-:::
-
-::: danger
-This is a dangerous warning.
-:::
-
-::: details
-This is a details block.
-:::
-```
-
-**Output**
-
-::: info
-This is an info box.
-:::
-
-::: tip
-This is a tip.
-:::
-
-::: warning
-This is a warning.
-:::
-
-::: danger
-This is a dangerous warning.
-:::
-
-::: details
-This is a details block.
-:::
-
-## More
-
-Check out the documentation for the [full list of markdown extensions](https://vitepress.dev/guide/markdown).

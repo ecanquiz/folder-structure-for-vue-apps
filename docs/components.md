@@ -1,6 +1,6 @@
-# `./src/core/components/`
+# Componentes
 
-En esta sección, realizaremos un ejercicio práctico con un componente genérico reutilizable que tiene un componente secundario que no es reutilizable por sí solo.
+En esta sección, realizaremos un ejemplo práctico con un componente genérico reutilizable que tiene un componente secundario que no es reutilizable por sí solo. Está ubicado en la carpeta `./src/core/components/`.
 
 >Es el caso del componente `RadioGroup.vue`. Este componente tiene un componente `Radio.vue`, que por sí solo es inútil.
 
