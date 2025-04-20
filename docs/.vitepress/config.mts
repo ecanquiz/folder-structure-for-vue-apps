@@ -32,8 +32,6 @@ export default defineConfig({
           { text: 'Enfoque', link: '/approach' },
           { text: 'Anidamiento', link: '/nesting' },
           { text: 'No Anidamiento', link: '/no-nesting' }
-
-
         ]
       }, {
         text: 'Ejemplo Prácticos',
@@ -44,16 +42,9 @@ export default defineConfig({
         items: [
           { text: 'Componentes', link: '/components' },
           { text: 'Diseños', link: '/layouts' },
-
+          { text: 'Pruebas', link: '/tests' }
         ]
       }
-      
-      , {
-        items: [
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
-
     ],
 
     socialLinks: [
