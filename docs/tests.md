@@ -1,20 +1,21 @@
 # Pruebas
 
 >Muchos de nosotros hemos estado acostumbrados a organizar los archivos `*.spec.ts` y `*.test.ts` dentro de una carpeta denominada `./tests/` fuera de la carpeta `./src/`
-```sh{4}
+```sh{2}
 ├── src/
-│   ├── core/
-│   └── modules/
 └── tests/
 ```
 
-En la medida que se van agregando archivos de pruebas automatizadas se va construyendo una estructura de carpetas muy parecida.
+## El Problema
 
-```sh{6,7,14,15}
+>En la medida que se van agregando archivos de pruebas automatizadas a la aplicación se va construyendo una estructura de carpetas muy parecida una de la otra.
+
+```sh{7,8,16,17}
 └── src/
 │   ├── core/   
 │   └── modules/
 │       ├── Auth/
+│       │   ...
 │       │   └── views/
 │       │       ├── Login.vue
 │       │       └── Register.vue
@@ -23,17 +24,20 @@ En la medida que se van agregando archivos de pruebas automatizadas se va constr
     ├── core/   
     └── modules/
         ├── Auth/
+        │   ...
         │   └── views/
         │       ├── Login.spec.ts
         │       └── Register.spec.ts
         └── User/
 ```
 
-Esta metodología se hace muy pesada cuando el proyecto crece ya que los archivos que se prueban están muy distantes de los archivos de pruebas.
+Esta prática se vuelve muy pesada cuando el proyecto crece, ya que los archivos que se están probando están muy distantes de los archivos que corren las pruebas.
 
 ## Alternativa
 
-Existe otro método más flexible.
+>Existe otra manera más ligera.
+
+En **el mismo sitio** donde están los archivos que serán probados se crea una carpeta para colocar los archivos que se probarán.
 
 ```sh{6,7,8}
 └── src/
@@ -63,9 +67,15 @@ Cuando la carpeta `__tests__/` está cerrada se verá así.
         └── User/
 ```
 
-Quizá sea una carpeta extra que agregará a la estructura pero con la satisfacción de recordarle siempre que los componentes aledaños tienen sus correpondientes pruebas automatizadas. 
+:::tip
+Cuando vea este tipo de carpetas dentro de la aplicación misma, le complacerá recordar que su respectivo código ya cuenta con su prueba automatizada correspondiente. Esta práctica lo motivará a continuar haciendo sus pruebas automáticas de lo que se va desarrollando.
+:::
 
 ## Anidamiento
+
+>Al igual que sucede con los componentes, los compsables también se pueden anidar.
+
+Imagine que tiene tres composables genéricos reutilizables con sus respectivos archivos de pruebas automáticas.
 
 ```sh{6}
 └── src/
@@ -83,6 +93,8 @@ Quizá sea una carpeta extra que agregará a la estructura pero con la satisfacc
     │   └── utils/
     └── modules/
 ```
+
+Al abrir la correspondiente carpeta `__tests__/` deberá ver algo como lo siguiente.
 
 ```sh{6,7,8,9}
 └── src/
@@ -104,6 +116,8 @@ Quizá sea una carpeta extra que agregará a la estructura pero con la satisfacc
     └── modules/
 ```
 
+Ahora, imagine que necesitamos dividir el composable `useBar.ts` en varios composables.
+
 ```sh{8}
 └── src/
     ├── core/
@@ -120,6 +134,8 @@ Quizá sea una carpeta extra que agregará a la estructura pero con la satisfacc
     │   └── utils/
     └── modules/
 ```
+
+Luciría así.
 
 ```sh{9}
 └── src/
@@ -141,6 +157,8 @@ Quizá sea una carpeta extra que agregará a la estructura pero con la satisfacc
     │   └── utils/
     └── modules/
 ```
+
+Y al desplegar su correspondiente carpeta `__tests__/`, entonces se verá algo así.
 
 ```sh{9,10,11}
 └── src/
@@ -164,6 +182,8 @@ Quizá sea una carpeta extra que agregará a la estructura pero con la satisfacc
     │   └── utils/
     └── modules/
 ```
+
+Ejemplo de las dos carpetas `__tests__/` desplegadas.
 
 ```sh{7,8,9,13,14}
 └── src/
@@ -191,6 +211,8 @@ Quizá sea una carpeta extra que agregará a la estructura pero con la satisfacc
     └── modules/
 ```
 
+Cerrémolas.
+
 ```sh{6,9}
 └── src/
     ├── core/
@@ -212,7 +234,9 @@ Quizá sea una carpeta extra que agregará a la estructura pero con la satisfacc
     └── modules/
 ```
 
-```sh
+Cerremos `useBar/`.
+
+```sh{8}
 └── src/
     ├── core/
     │   ├── assets/
