@@ -1,8 +1,8 @@
 # Anidamiento de Componentes
 
-En esta sección, realizaremos un ejemplo práctico con un componente genérico reutilizable que tiene un componente secundario que no es reutilizable por sí solo. Está ubicado en la carpeta `./src/core/components/`.
+En esta sección, realizaremos un ejemplo práctico utilizando un componente genérico reutilizable que contiene un componente secundario que no es útil por sí solo. Este ejemplo se encuentra en la carpeta `./src/core/components/`.
 
->Es el caso del componente `RadioGroup.vue`. Este componente tiene un componente `Radio.vue`, que por sí solo es inútil.
+>Consideremos el componente `RadioGroup.vue`, que incluye un componente `Radio.vue`, el cual, por sí mismo, no tiene funcionalidad. La estructura inicial es la siguiente:
 
 ```sh{16,17}
 └── src/
@@ -34,9 +34,9 @@ En esta sección, realizaremos un ejemplo práctico con un componente genérico 
     └── modules/
 ```
 
-Dado que el componente `Radio.vue` es inútil por sí solo, lo encapsularemos en una carpeta llamada `./src/core/components/RadiGroup/`.
+Dado que el componente `Radio.vue` es inútil por sí solo, lo encapsularemos en una nueva carpeta llamada `./src/core/components/RadioGroup/`. Además, moveremos el componente `RadioGroup.vue` a esta carpeta y lo renombraremos a `Index.vue` para mejorar la organización.
 
-También moveremos el componente `RadiGroup.vue` dentro de esta carpeta y lo renombraremos `Index.vue`.
+La nueva estructura será:
 
 ```sh{16,17,18}
 └── src/
@@ -70,7 +70,7 @@ También moveremos el componente `RadiGroup.vue` dentro de esta carpeta y lo ren
 ```
 
 :::tip
-Asegúrese de realizar las actualizaciones respectivas donde se importó este componente.
+Asegúrese de realizar las actualizaciones necesarias en los lugares donde se importó este componente.
 ```vue{3,4}
 <script setup lang="ts">
 // ...
@@ -82,7 +82,7 @@ import AppRadioGroup from "./core/components/app/RadioGroup/Index.vue"
 ```
 :::
 
-Ahora, veamos como luce cuando el componente `RadioGroup/` está cerrado.
+Ahora, veamos cómo luce la estructura cuando el componente `RadioGroup/` está cerrado:
 
 ```sh{16}
 └── src/
