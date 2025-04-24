@@ -1,4 +1,4 @@
-# Diseños
+# Anidamiento de Diseños
 
 >Los componentes que están en la carpeta `.src/core/layouts/`.
 

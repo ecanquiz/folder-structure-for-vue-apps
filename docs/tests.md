@@ -1,4 +1,4 @@
-# Pruebas
+# Anidamiento de Pruebas
 
 >Muchos de nosotros hemos estado acostumbrados a organizar los archivos `*.spec.ts` y `*.test.ts` dentro de una carpeta denominada `./tests/` fuera de la carpeta `./src/`
 ```sh{2}
@@ -71,9 +71,9 @@ Cuando la carpeta `__tests__/` está cerrada se verá así.
 Cuando vea este tipo de carpetas dentro de la aplicación misma, le complacerá recordar que su respectivo código ya cuenta con su prueba automatizada correspondiente. Esta práctica lo motivará a continuar haciendo sus pruebas automáticas de lo que se va desarrollando.
 :::
 
-## Anidamiento
+## Anidamiento de Composables
 
->Al igual que sucede con los componentes, los compsables también se pueden anidar.
+>Al igual que sucede con los componentes, los composables también se podrían anidar.
 
 Imagine que tiene tres composables genéricos reutilizables con sus respectivos archivos de pruebas automáticas.
 
