@@ -1,6 +1,6 @@
-# Enfoque
+# Alternativa
 
->Para enfocar adecuadamente la solución al problema en cuestión, partiremos de una pequeña aplicación que solo tiene 3 vistas o páginas.
+>Para ilustrar claramente la solución al problema en cuestión, como ejemplo, partiremos de una pequeña aplicación que por ahora solo tiene tres vistas o páginas.
 
 Comenzaremos creando dos carpetas correspondientes:
 

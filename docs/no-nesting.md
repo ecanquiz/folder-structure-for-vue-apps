@@ -1,6 +1,6 @@
 # No Anidamiento
 
->Como vimos en el [apartado anterior](./nesting.md), la **tecnica de anidamiento de carpetas** hace referencia solo a los tipos de carpetas `components/` y `composables/` incluidas dentro y fuera de las carpetas `views/` o `layouts/`.
+>Como veremos a partir del [siguiente apartado](./nesting.md), la **tecnica de anidamiento de carpetas** hace referencia solo a los tipos de carpetas `components/` y `composables/` incluidas dentro y fuera de las carpetas `views/` o `layouts/` respectivamente.
 
 Exploremos aquellas carpetas que no requieren anidación e indaguemos por qué...
 

@@ -20,29 +20,13 @@ export default defineConfig({
           { text: 'Estructuras de Carpetas', link: '/folder-structures' },
           { text: 'Cuando la Aplicación Crece', link: '/when-the-app-grows' },
           { text: 'Estructura Modular', link: '/modular-structure' },
-          { text: 'El Problema', link: '/the-problem' }
-        ]
-      }, {
-        text: 'Alternativa',
-        sidebarDepth: 1,    // optional, defaults to 1
-        collapsible: true,
-        collapsed: false, 
-
-        items: [
-          { text: 'Enfoque', link: '/approach' },
+          { text: 'El Problema', link: '/the-problem' },
+          { text: 'Alternativa', link: '/alternative' },
+          { text: 'No Anidamiento', link: '/no-nesting' },
           { text: 'Anidamiento', link: '/nesting' },
-          { text: 'No Anidamiento', link: '/no-nesting' }
-        ]
-      }, {
-        text: 'Ejemplo Prácticos',
-        sidebarDepth: 1,    // optional, defaults to 1
-        collapsible: true,
-        collapsed: false, 
-
-        items: [
-          { text: 'Componentes', link: '/components' },
-          { text: 'Diseños', link: '/layouts' },
-          { text: 'Pruebas', link: '/tests' }
+          { text: 'Anidamiento de Componentes', link: '/components' },
+          { text: 'Anidamiento de Diseños', link: '/layouts' },
+          { text: 'Anidamiento de Pruebas', link: '/tests' }
         ]
       }
     ],
