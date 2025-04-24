@@ -1,8 +1,8 @@
-# Anidamiento de Diseños
+# Anidamiento de Diseños de Temas
 
->Los componentes que están en la carpeta `.src/core/layouts/`.
+>En esta sección trataremos los componentes que están en la carpeta `.src/core/layouts/`.
 
-Ahora, haremos un ejemplo práctico con la carpeta que alberga el layout de nuestra aplicación.
+Haremos un ejemplo práctico con la carpeta que alberga el diseño del tema de nuestra aplicación.
 
 ```sh{6}
 └── src/
@@ -22,7 +22,7 @@ Ahora, haremos un ejemplo práctico con la carpeta que alberga el layout de nues
 
 Si desplegamos la carpeta `.src/core/layouts/` y nos preguntamos:
 
->**¿Cuantos diseños hay?**
+>**¿Cuantos tipos de temas diseñados hay aquí?**
 
 ```sh{7,8,9,10,11,12,13}
 └── src/
@@ -46,7 +46,7 @@ Si desplegamos la carpeta `.src/core/layouts/` y nos preguntamos:
     └── modules/
 ```
 
-Después de leer uno a uno los archivos que están en la carpeta `.src/core/layouts/`, semánticamente deducimos que son tres: `Custom.vue`, `Default.vue` y `Emtpy.vue`.
+Luego de leer uno a uno los archivos que están en la carpeta `.src/core/layouts/`, semánticamente deducimos que son tres: `Custom.vue`, `Default.vue` y `Emtpy.vue`.
 
 ```sh{7,8,9}
 └── src/
@@ -94,7 +94,7 @@ Supongamos que todos los componentes hijos pertenecen a `Default.vue`.
 ```
 
 :::tip 
-Tenga en cuenta que los componentes hijos `Footer.vue`, `Header.vue`, `Navbar.vue` y `Sidebar.vue` solo pueden ser hijos del componente `Default/Index.vue`. 
+Tenga en cuenta que aquí los componentes hijos `Footer.vue`, `Header.vue`, `Navbar.vue` y `Sidebar.vue` solo pueden ser hijos del componente padre `Default/Index.vue`. 
 :::
 
 Si lo desea, podemos ser más disciplinados.
@@ -145,8 +145,9 @@ Entonces, se verá así.
 
 ## Componentes Reutilizables
 
-Los componentes hijos `Footer.vue`, `Header.vue`, `Navbar.vue` y `Sidebar.vue` solo pueden ser hijos compartidos dentro de la carpeta `./src/core/layouts`. Por lo que no tiene sentido colocarlos dentro de la carpeta  `./src/core/components`. Veamos un ejemplo.
+Los componentes hijos `Footer.vue` y `Header.vue` solo pueden ser reutilizados dentro de la carpeta `./src/core/layouts`. Por lo que no tiene sentido colocarlos dentro de la carpeta  `./src/core/components`.
 
+Veamos un ejemplo.
 
 ```sh{7,8,10,11,15,16}
 └── src/
@@ -177,6 +178,11 @@ Los componentes hijos `Footer.vue`, `Header.vue`, `Navbar.vue` y `Sidebar.vue` s
 >En el ejemplo anterior, los componentes hijos `Footer.vue` y `Header.vue` son reutilizados por los componentes padres `Custom/Index.vue` y `Default/Index.vue` respectivamente.
 
 Sin embargo, cada uno posee sus correspondientes hijos `Navbar.vue` y `Sidebar.vue` que les corresponden.
+
+:::tip
+Tenga en cuenta que no hay necesidad de agregar prefijos o sufijos a los respectivos componentes `Navbar.vue` y `Sidebar.vue`, ya que cada uno de ellos está ubicado dentro de la carpeta a la cual pertenece.
+:::
+
 
 Si lo desea, podemos ser más disciplinados.
 
@@ -236,7 +242,9 @@ Entonces, se verá así.
     │   └── utils/
     └── modules/
 ```
-Y así.
+
+>¡Genial! Ahora se ve más limpio.
+
 
 ```sh{7}
 └── src/

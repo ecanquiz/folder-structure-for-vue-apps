@@ -1,6 +1,7 @@
 # Anidamiento de Pruebas
 
->Muchos de nosotros hemos estado acostumbrados a organizar los archivos `*.spec.ts` y `*.test.ts` dentro de una carpeta denominada `./tests/` fuera de la carpeta `./src/`
+>Muchos de nosotros hemos estado acostumbrados a organizar los archivos `*.spec.ts` y `*.test.ts` dentro de una carpeta `./tests/`, fuera de la carpeta `./src/`.
+
 ```sh{2}
 ├── src/
 └── tests/
@@ -31,7 +32,7 @@
         └── User/
 ```
 
-Esta prática se vuelve muy pesada cuando el proyecto crece, ya que los archivos que se están probando están muy distantes de los archivos que corren las pruebas.
+>Esta prática se vuelve pesada cuando el proyecto crece, ya que los archivos que se están probando están muy distantes de los archivos que corren las pruebas.
 
 ## Alternativa
 
@@ -68,12 +69,12 @@ Cuando la carpeta `__tests__/` está cerrada se verá así.
 ```
 
 :::tip
-Cuando vea este tipo de carpetas dentro de la aplicación misma, le complacerá recordar que su respectivo código ya cuenta con su prueba automatizada correspondiente. Esta práctica lo motivará a continuar haciendo sus pruebas automáticas de lo que se va desarrollando.
+Cuando vea este tipo de carpetas dentro de la aplicación misma, le complacerá recordar que su respectivo código ya cuenta con su prueba automatizada correspondiente. Esta práctica lo motivará a continuar haciendo sus pruebas automáticas de lo que va desarrollando.
 :::
 
 ## Anidamiento de Composables
 
->Al igual que sucede con los componentes, los composables también se podrían anidar.
+>Al igual que sucede con [los componentes](./components.html), los composables también se podrían anidar.
 
 Imagine que tiene tres composables genéricos reutilizables con sus respectivos archivos de pruebas automáticas.
 
@@ -183,7 +184,7 @@ Y al desplegar su correspondiente carpeta `__tests__/`, entonces se verá algo a
     └── modules/
 ```
 
-Ejemplo de las dos carpetas `__tests__/` desplegadas.
+El ejemplo de las dos carpetas `__tests__/` desplegadas.
 
 ```sh{7,8,9,13,14}
 └── src/
@@ -211,7 +212,7 @@ Ejemplo de las dos carpetas `__tests__/` desplegadas.
     └── modules/
 ```
 
-Cerrémolas.
+Ahora, las carpetas `__tests__/` cerradas.
 
 ```sh{6,9}
 └── src/
@@ -234,7 +235,7 @@ Cerrémolas.
     └── modules/
 ```
 
-Cerremos `useBar/`.
+Y ahora, `useBar/` cerrada.
 
 ```sh{8}
 └── src/

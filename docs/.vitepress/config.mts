@@ -22,11 +22,12 @@ export default defineConfig({
           { text: 'Estructura Modular', link: '/modular-structure' },
           { text: 'El Problema', link: '/the-problem' },
           { text: 'Alternativa', link: '/alternative' },
-          { text: 'No Anidamiento', link: '/no-nesting' },
           { text: 'Anidamiento', link: '/nesting' },
+          { text: 'No Anidamiento', link: '/no-nesting' },
           { text: 'Anidamiento de Componentes', link: '/components' },
-          { text: 'Anidamiento de Diseños', link: '/layouts' },
-          { text: 'Anidamiento de Pruebas', link: '/tests' }
+          { text: 'Anidamiento de Diseños de Temas', link: '/layouts' },
+          { text: 'Anidamiento de Pruebas', link: '/tests' },
+          { text: 'Pros y Contras', link: '/pros-and-cons' }
         ]
       }
     ],
