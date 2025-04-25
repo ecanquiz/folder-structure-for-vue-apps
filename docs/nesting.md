@@ -1,6 +1,6 @@
 # Anidamiento
 
->En este apartado exploraremos una técnica estructural de **anidamiento de carpetas** de componentes y composables.
+>En este apartado exploraremos una técnica estructural de **anidamiento de carpetas** de componentes y componibles.
 
 ## Cuando el componente `Foo.vue` empieza a crecer
 
@@ -30,7 +30,7 @@ Tenga en cuenta que desde ahora `./src/views/Foo.vue` será llamado `./src/views
 
 ## `Foo/Index.vue` continúa aumentando
 
-Ahora, el componente padre necesita más componentes y composables hijos.
+Ahora, el componente padre necesita más componentes y componibles hijos.
 
 ```sh{6,7,10,11}
 └── src/
@@ -108,7 +108,7 @@ La estructura clásica de un proyecto Vue.js es la siguiente:
 
 ## Código Reutilizable Globalmente
 
-En las carpetas `./src/components` y `./src/composables` colocaremos, respectivamente, solo los componentes y composables que pueden ser reutilizados por cualquiera de las vistas.
+En las carpetas `./src/components` y `./src/composables` colocaremos, respectivamente, solo los componentes y componibles que pueden ser reutilizados por cualquiera de las vistas.
 
 ```sh{3,4,5,6,7,9,10}
 └── src/

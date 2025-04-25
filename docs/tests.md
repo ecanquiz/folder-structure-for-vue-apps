@@ -1,4 +1,4 @@
-# Anidamiento de Pruebas
+# Anidando Pruebas
 
 >Muchos de nosotros hemos estado acostumbrados a organizar los archivos `*.spec.ts` y `*.test.ts` dentro de una carpeta `./tests/`, fuera de la carpeta `./src/`.
 
@@ -54,6 +54,45 @@ En **el mismo sitio** donde están los archivos que serán probados se crea una 
         └── User/
 ```
 
+:::tip
+```ts
+import { defineConfig } from 'vite';
+
+export default defineConfig({
+  build: {
+    rollupOptions: {
+      input: {
+        main: './index.html', // o el punto de entrada de su aplicación
+        // ...otros puntos de entrada, si los tiene
+      },
+      inputOptions: {
+        input: [
+          "./index.html",
+          "./src/app.js",
+        ],
+        exclude: ['**/__tests__/**/*'],
+      }
+    },
+  },
+});
+```
+
+```ts
+// vite.config.ts
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  build: {
+    rollupOptions: {
+      external: [
+        'src/excluir/este-archivo.js',
+      ]
+    }
+  }
+})
+```
+:::
+
 Cuando la carpeta `__tests__/` está cerrada se verá así.
 
 ```sh{6}
@@ -72,11 +111,11 @@ Cuando la carpeta `__tests__/` está cerrada se verá así.
 Cuando vea este tipo de carpetas dentro de la aplicación misma, le complacerá recordar que su respectivo código ya cuenta con su prueba automatizada correspondiente. Esta práctica lo motivará a continuar haciendo sus pruebas automáticas de lo que va desarrollando.
 :::
 
-## Anidamiento de Composables
+## Anidando Componibles
 
->Al igual que sucede con [los componentes](./components.html), los composables también se podrían anidar.
+>Al igual que sucede con [los componentes](./components.html), los componibles también se podrían anidar.
 
-Imagine que tiene tres composables genéricos reutilizables con sus respectivos archivos de pruebas automáticas.
+Imagine que tiene tres componibles genéricos reutilizables con sus respectivos archivos de pruebas automáticas.
 
 ```sh{6}
 └── src/
@@ -117,7 +156,7 @@ Al abrir la correspondiente carpeta `__tests__/` deberá ver algo como lo siguie
     └── modules/
 ```
 
-Ahora, imagine que necesitamos dividir el composable `useBar.ts` en varios composables.
+Ahora, imagine que necesitamos dividir el composable `useBar.ts` en varios componibles.
 
 ```sh{8}
 └── src/

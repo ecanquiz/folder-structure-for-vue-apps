@@ -24,9 +24,9 @@ export default defineConfig({
           { text: 'Alternativa', link: '/alternative' },
           { text: 'Anidamiento', link: '/nesting' },
           { text: 'No Anidamiento', link: '/no-nesting' },
-          { text: 'Anidamiento de Componentes', link: '/components' },
-          { text: 'Anidamiento de Diseños de Temas', link: '/layouts' },
-          { text: 'Anidamiento de Pruebas', link: '/tests' },
+          { text: 'Anidando Componentes', link: '/components' },
+          { text: 'Anidando Diseños de Temas', link: '/layouts' },
+          { text: 'Anidando Pruebas', link: '/tests' },
           { text: 'Pros y Contras', link: '/pros-and-cons' }
         ]
       }
