@@ -1,4 +1,4 @@
-# Anidamiento de Componentes
+# Anidando Componentes
 
 En esta sección, realizaremos un ejemplo práctico utilizando un componente genérico reutilizable que contiene un componente secundario que no es útil por sí solo. Este ejemplo se encuentra en la carpeta `./src/core/components/`.
 

@@ -3,7 +3,7 @@
 Con el inevitable crecimiento del proyecto, es recomendable adoptar una **estructura modular** para las carpetas.
 
 ```sh{4,5,6,7,8,9,10}
-├── src/
+└── src/
     └── modules/
         ├── moduleA/
         │   ├── components/
@@ -64,8 +64,8 @@ Imaginemos que organizamos nuestro código en dos módulos, separando la lógica
 
 Esta organización permite visualizar claramente la ubicación de los archivos según su funcionalidad, separando la estructura del código en módulos.
 
-::: info 
-Es importante mencionar que, aunque se puede crear una carpeta `tests/` para los archivos de prueba, hay objeciones a esta práctica. Muchos desarrolladores prefieren crear carpetas dentro de `src/`, como `__tests__/` o `__mocks__`/, y este tema será tratado en el apartado de las Carpetas de Pruebas.
+::: tip 
+Es importante mencionar que, si bien se puede crear una carpeta `tests/` para los archivos de prueba, existen objeciones a esta práctica. Muchos desarrolladores están prefiriendo crear carpetas dentro de `src/`, como `__tests__/` o `__mocks__/`, tema que se abordará [más adelante](./tests.html).
 :::
 
 ## Código Genérico
@@ -87,7 +87,7 @@ Para organizarlo, podemos crear una carpeta al mismo nivel que `modules/`, denom
     └── modules/
 ```
 
->Siéntase libre de nombrar esta carpeta como prefiera su equipo, por ejemplo, `main/`, `base/`, `central/`, `general/`, etc. Recuerde: _"Las distintas denominaciones son cuestiones de forma más no de fondo"_. Es recomendable consultar estas convenciones con su equipo de desarrollo.
+>Siéntase libre de nombrar esta carpeta como prefiera usted o su equipo de desarrollo, por ejemplo, `main/`, `base/`, `central/`, `general/`, etc. Recuerde: _"Las distintas denominaciones son cuestiones de forma más no de fondo"_. Es recomendable consultar estas convenciones con su equipo de desarrollo.
 
 ## Código Organizado
 

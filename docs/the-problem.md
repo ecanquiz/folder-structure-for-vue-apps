@@ -117,7 +117,7 @@ Tenga en cuenta que `Login.vue` importa dos (2) archivos:
 
 Afortunadamente nuestro código ya está ordenado por módulos. En este caso, todo lo que necesitamos revisar está ubicado en el módulo `Auth`.
 
->Sin embargo, si este módulo tuviera más vistas, más componentes y más composables, la separación entre estos tres archivos que evidentemente conciernen a la misma funcionalidad podría resultar abrumadora.
+>Sin embargo, si este módulo tuviera más vistas, más componentes y más componibles, la separación entre estos tres archivos que evidentemente conciernen a la misma funcionalidad podría resultar abrumadora.
 
 ## Preguntas
 

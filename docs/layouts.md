@@ -1,4 +1,4 @@
-# Anidamiento de Diseños de Temas
+# Anidando Diseños de Temas
 
 >En esta sección trataremos los componentes que están en la carpeta `.src/core/layouts/`.
 

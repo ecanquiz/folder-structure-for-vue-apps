@@ -23,7 +23,7 @@ features:
   - title: Bien definida
     details: Mejora notablemente la legibilidad y escalabilidad del proyecto
   - title: El enfoque modular anidado
-    details: Orientado a componentes y composables, proporciona una base sólida para el desarrollo de aplicaciones
+    details: Orientado a componentes y componibles, proporciona una base sólida para el desarrollo de aplicaciones
   - title: Organización y claridad en el código
     details: Requiere una atención cuidadosa a medida que el desarrollo evoluciona
 ---
