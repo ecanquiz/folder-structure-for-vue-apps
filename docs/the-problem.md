@@ -22,8 +22,9 @@
         └── User/
 ```
 
-Al editarlo, nos encontramos con un [SFC](https://vuejs.org/guide/scaling-up/sfc) _(Single File Component)_ parecido al siguiente:
+Al editar el archivo `Login.vue`, nos encontramos con un [SFC](https://vuejs.org/guide/scaling-up/sfc) _(Single File Component)_ parecido al siguiente:
 
+📃`Login.vue`
 ```vue{2,3}
 <script setup lang="ts">  
 import FormLogin from "../components/FormLogin.vue";
@@ -45,7 +46,7 @@ const {erro, sending, login} = useLogin();
 </template>
 ```
 
-Tenga en cuenta que `Login.vue` importa dos (2) archivos: 
+Tenga en cuenta que el archivo `Login.vue` importa dos (2) archivos: 
 
 1) El componente `LoginForm.vue`.
 ```sh{7,25}
@@ -79,7 +80,7 @@ Tenga en cuenta que `Login.vue` importa dos (2) archivos:
         └── User/
 ```
 
-2) El composable `useLogin.ts`.
+2) El componible `useLogin.ts`.
 ```sh{7,18,29}
 └── src/
     ├── core/

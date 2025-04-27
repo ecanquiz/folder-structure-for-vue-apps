@@ -17,4 +17,4 @@ Comenzaremos creando dos carpetas correspondientes:
         └── Baz.vue
 ```
 
->Por ahora, no necesitamos más carpetas; otras serán creadas en el momento que sea necesario. Continuemos...
+>Por ahora, no necesitamos más carpetas; otras serán creadas en el momento que sea necesario.
