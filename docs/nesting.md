@@ -1,3 +1,5 @@
+Por: [Ernesto Canquiz](https://github.com/ecanquiz)
+
 # Anidamiento
 
 >En este apartado exploraremos una técnica estructural de **anidamiento de carpetas** de componentes y componibles.

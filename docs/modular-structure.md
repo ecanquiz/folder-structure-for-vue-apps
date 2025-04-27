@@ -1,3 +1,5 @@
+Por: [Ernesto Canquiz](https://github.com/ecanquiz)
+
 # Estructura Modular
 
 Con el inevitable crecimiento del proyecto, es recomendable adoptar una **estructura modular** para las carpetas.
