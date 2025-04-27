@@ -8,7 +8,7 @@ Supongamos que necesitamos refactorizar la vista `Foo.vue` porque el código fue
 
 >Crearemos un componente hijo que llamaremos `Children.vue` para desacoplar parte del código. Dicho componente no es reutilizable, ya que solo es de utilidad para el componente padre `Foo.vue`.
 
-Igualmente, como buena práctica, creamos el composable `useFoo.ts` para separar la regla de negocio de la interfaz gráfica.
+Igualmente, como buena práctica, creamos el componible `useFoo.ts` para separar la regla de negocio de la interfaz gráfica.
 
 ```sh{4,5,6,7}
 └── src/
@@ -22,7 +22,7 @@ Igualmente, como buena práctica, creamos el composable `useFoo.ts` para separar
         └── Baz.vue
 ```
 
-Tanto `Children.vue` como `useFoo.ts` pertenecen únicamente a `./src/views/Foo/`, por lo que no tiene sentido separarlos en carpetas distintas.
+Tanto el componente `Children.vue` como el composable `useFoo.ts` pertenecen únicamente a la carpeta `./src/views/Foo/`, por lo que no tiene sentido separarlos en carpetas distintas.
 
 :::tip
 Tenga en cuenta que desde ahora `./src/views/Foo.vue` será llamado `./src/views/Foo/Index.vue`. Por lo tanto, este cambio debe ser actualizado en el archivo `./src/router/index.ts`.
@@ -30,7 +30,7 @@ Tenga en cuenta que desde ahora `./src/views/Foo.vue` será llamado `./src/views
 
 ## `Foo/Index.vue` continúa aumentando
 
-Ahora, el componente padre necesita más componentes y componibles hijos.
+Ahora, el componente padre necesita más componentes y componibles hijos. Estos solo son utiles para `.src/views/Foo/Index.vue`.
 
 ```sh{6,7,10,11}
 └── src/
@@ -114,8 +114,8 @@ En las carpetas `./src/components` y `./src/composables` colocaremos, respectiva
 └── src/
     ├── components/
     │   ├── GlobalReusable/
-    │   │   ├── GlobalReusableChildren.vue
-    │   │   ├── GlobalReusableChildrenOther.vue
+    │   │   ├── Children.vue
+    │   │   ├── ChildrenOther.vue
     │   │   └── Index.vue
     │   └── GlobalReusableOther.vue
     ├── composables/
@@ -125,9 +125,16 @@ En las carpetas `./src/components` y `./src/composables` colocaremos, respectiva
     └── views/
 ```
 
+>Tenga en cuenta que el componente principal `./src/components/GlobalReusable/Index.vue` posee dos componentes secundarios:
+
+>- `./src/components/GlobalReusable/Children.vue`
+>- `./src/components/GlobalReusable/ChildrenOther.vue`
+
+>Estos dos componentes hijos solo tendrán sentido dentro de su componente padre.
+
 ## Un Paso Más Allá
 
->Ahora que hemos llegado aquí, usted se preguntará...
+>Ahora que hemos llegado aquí, usted se preguntará:
 >
 >**¿Cómo quedará todo esto con la estructura modular?**.
 
@@ -148,7 +155,7 @@ Echemos un vistazo a la siguiente estructura:
         ├── ModuleB
         │    ├── components/
         │    │   ├── OnlyReusableByModuleB/
-        │    │   │   ├── OnlyReusableByModuleBChildren.vue
+        │    │   │   ├── Children.vue
         │    │   │   └── Index.vue
         │    │   └── OnlyReusableByModuleBOther.vue
         │    ├── composables/
@@ -161,3 +168,7 @@ Echemos un vistazo a la siguiente estructura:
         │       └── Baz.vue
         └── ModuleC
 ```
+
+>**Este enfoque modular y anidado proporciona una base sólida para el desarrollo de aplicaciones Vue.**
+
+>Al mantener los componentes y componibles secundarios dentro de sus respectivos componentes y componibles principales, se establece una exclusividad clara y se fomenta la reutilización de aquellos que son globales.
