@@ -8,8 +8,8 @@ Por: [Ernesto Canquiz](https://github.com/ecanquiz)
 
 - **Agrupación de Archivos Relacionados**: Los archivos que están estrechamente relacionados quedan todos juntos en la misma carpeta.
 >Esto reduce la necesidad de navegar por múltiples carpetas para revisarlos, lo que mejora la eficiencia en el desarrollo.
-- **Nombres de Archivos Más Intuitivos**: Si la vista se llama `./views/Login/Index.vue`, su componente hijo puede llamarse directamente `Form.vue`. La nueva nomenclatura es más clara y directa.
->En comparación con la estructura tradicional, donde se utilizarían nombres como `FormLogin.vue` o `LoginForm.vue` para diferenciarlo de otros formularios.
+- **Nombres de Archivos Más Intuitivos**: Si el componente padre se llama `Foo/Index.vue`, su componente hijo exclusivo puede llamarse directamente `Children.vue`. La nueva nomenclatura es más clara y directa.
+>En comparación con la estructura tradicional, donde se utilizarían nombres como `FooChildren.vue` o `ChildrenFoo.vue` para diferenciarlo de otros archivos aledaños.
 - **Claridad en la Exclusividad**: Los componentes y componibles anidados dentro del componente padre son de exclusividad del mismo, lo que facilita la comprensión de su propósito y uso.
 - **Reutilización Clara**: Los componentes y componibles que no están anidados dentro de la carpeta del componente padre son reutilizables dentro de la jerarquía, lo que fomenta la modularidad y la reutilización del código.
 
