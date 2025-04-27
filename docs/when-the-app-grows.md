@@ -1,4 +1,6 @@
-#  Cuando la Aplicación Crece
+Por: [Ernesto Canquiz](https://github.com/ecanquiz)
+
+# Cuando la Aplicación Crece
 
 A medida que un proyecto avanza, es común que surja la necesidad de crear carpetas adicionales para organizar mejor los archivos y componentes. Una estructura más compleja puede verse así:
 

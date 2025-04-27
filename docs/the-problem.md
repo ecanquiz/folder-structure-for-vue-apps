@@ -1,3 +1,5 @@
+Por: [Ernesto Canquiz](https://github.com/ecanquiz)
+
 # El Problema
 
 >Supongamos que vamos a revisar la página de Iniciar Sesión para depurar nuestro código. Entramos en la carpeta `src/modules/Auth/views/` y seleccionamos el archivo `Login.vue`.

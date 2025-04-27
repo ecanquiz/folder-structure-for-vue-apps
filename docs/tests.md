@@ -1,3 +1,5 @@
+Por: [Ernesto Canquiz](https://github.com/ecanquiz)
+
 # Anidando Pruebas
 
 >Muchos de nosotros hemos estado acostumbrados a organizar los archivos `*.spec.ts` y `*.test.ts` dentro de una carpeta `./tests/`, fuera de la carpeta `./src/`.
@@ -54,7 +56,26 @@ En **el mismo sitio** donde están los archivos que serán probados se crea una 
         └── User/
 ```
 
-:::tip
+:::details ¿Incluir codigo de pruebas dentro de la carpeta `src/`?
+Si le preocupa incluir codigo de pruebas dentro de la carpeta `src/`, tome en cuenta que [Vite](https://vite.dev/) cuenta con una [opción](https://vite.dev/config/build-options#build-rollupoptions) para excluir archivos que no desea generar a la distribución de producción.
+
+```ts
+// vite.config.ts
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  build: {
+    rollupOptions: {
+      external: [
+        'src/exclude/this-file.ts',
+      ]
+    }
+  }
+})
+```
+
+Ejemplo.
+
 ```ts
 import { defineConfig } from 'vite';
 
@@ -62,8 +83,8 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: './index.html', // o el punto de entrada de su aplicación
-        // ...otros puntos de entrada, si los tiene
+        main: './index.html', // or the entry point of your application
+        // ... other entry points, if any
       },
       inputOptions: {
         input: [
@@ -77,20 +98,7 @@ export default defineConfig({
 });
 ```
 
-```ts
-// vite.config.ts
-import { defineConfig } from 'vite'
 
-export default defineConfig({
-  build: {
-    rollupOptions: {
-      external: [
-        'src/excluir/este-archivo.js',
-      ]
-    }
-  }
-})
-```
 :::
 
 Cuando la carpeta `__tests__/` está cerrada se verá así.
@@ -108,7 +116,7 @@ Cuando la carpeta `__tests__/` está cerrada se verá así.
 ```
 
 :::tip
-Cuando vea este tipo de carpetas dentro de la aplicación misma, le complacerá recordar que su respectivo código ya cuenta con su prueba automatizada correspondiente. Esta práctica lo motivará a continuar haciendo sus pruebas automáticas de lo que va desarrollando.
+Cuando vea este tipo de carpetas dentro de la aplicación misma, le complacerá recordar que su respectivo código ya cuenta con su prueba automatizada correspondiente. Esta práctica lo motivará a continuar [haciendo sus pruebas automáticas](https://ecanquiz.github.io/vue-tdd/) de lo que va desarrollando.
 :::
 
 ## Anidando Componibles
@@ -156,7 +164,7 @@ Al abrir la correspondiente carpeta `__tests__/` deberá ver algo como lo siguie
     └── modules/
 ```
 
-Ahora, imagine que necesitamos dividir el composable `useBar.ts` en varios componibles.
+Ahora, imagine que necesitamos dividir el composable `useBar.ts` en varios componibles de su propia exclusividad.
 
 ```sh{8}
 └── src/
@@ -223,7 +231,7 @@ Y al desplegar su correspondiente carpeta `__tests__/`, entonces se verá algo a
     └── modules/
 ```
 
-El ejemplo de las dos carpetas `__tests__/` desplegadas.
+Lo siguiente es el ejemplo de las dos carpetas `__tests__/` desplegadas.
 
 ```sh{7,8,9,13,14}
 └── src/
@@ -292,3 +300,10 @@ Y ahora, `useBar/` cerrada.
     │   └── utils/
     └── modules/
 ```
+
+**¡Genial!**
+
+>Siéntase libre de apoderarse de la flexibilidad que le brinda la programación orientada a componentes y componibles para crear una estructura de carpetas diseñada a su favor,
+
+>Pero antes, discútelo con tu equipo de desarrollo.
+

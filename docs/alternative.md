@@ -1,3 +1,5 @@
+Por: [Ernesto Canquiz](https://github.com/ecanquiz)
+
 # Alternativa
 
 >Para ilustrar claramente la solución al problema en cuestión, como ejemplo, partiremos de una pequeña aplicación que por ahora solo tiene tres vistas o páginas.
