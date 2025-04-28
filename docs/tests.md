@@ -196,7 +196,7 @@ Luciría así.
     │   │   ├── useBar/
     │   │   │   ├── __tests__/
     │   │   │   ├── useBarA.ts
-    │   │   │   ├── useBarA.ts
+    │   │   │   ├── useBarB.ts
     │   │   │   └── index.ts
     │   │   └── useBaz.ts
     │   ├── middleware/
@@ -246,10 +246,10 @@ Lo siguiente es el ejemplo de las dos carpetas `__tests__/` desplegadas.
     │   │   ├── useFoo.ts
     │   │   ├── useBar/
     │   │   │   ├── __tests__/
-    │   │   │   │   ├── useBarA.test.ts
-    │   │   │   │   └── useBarB.test.ts
+    │   │   │   │   ├── useBarA.spec.ts
+    │   │   │   │   └── useBarB.spec.ts
     │   │   │   ├── useBarA.ts
-    │   │   │   ├── useBarA.ts
+    │   │   │   ├── useBarB.ts
     │   │   │   └── index.ts
     │   │   └── useBaz.ts
     │   ├── middleware/
@@ -272,7 +272,7 @@ Ahora, las carpetas `__tests__/` cerradas.
     │   │   ├── useBar/
     │   │   │   ├── __tests__/
     │   │   │   ├── useBarA.ts
-    │   │   │   ├── useBarA.ts
+    │   │   │   ├── useBarB.ts
     │   │   │   └── index.ts
     │   │   └── useBaz.ts
     │   ├── middleware/
