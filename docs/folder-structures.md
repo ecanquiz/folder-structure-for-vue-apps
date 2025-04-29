@@ -13,12 +13,12 @@ La estructura de carpetas es fundamental para organizar los archivos y component
 A continuación, se presenta un ejemplo de la estructura básica de carpetas de un proyecto [Vue](https://vuejs.org/), siguiendo convenciones comunes:
 
 ```sh
-└── src/
-    ├── assets/
-    ├── components/
-    ├── router/
-    ├── store/
-    └── views/
+└──src/
+    ├──assets/
+    ├──components/
+    ├──router/
+    ├──store/
+    └──views/
 ```
 
 ::: tip
