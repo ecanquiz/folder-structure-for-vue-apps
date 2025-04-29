@@ -1,0 +1,1 @@
+import{_ as i,c as a,o as n,ae as l}from"./chunks/framework.oSdz25v6.js";const g=JSON.parse('{"title":"Anidando Pruebas","description":"","frontmatter":{},"headers":[],"relativePath":"tests.md","filePath":"tests.md"}'),p={name:"tests.md"};function h(t,s,e,k,F,r){return n(),a("div",null,s[0]||(s[0]=[l("",37)]))}const c=i(p,[["render",h]]);export{g as __pageData,c as default};

@@ -1,0 +1,1 @@
+import{_ as i,c as a,o as n,ae as e}from"./chunks/framework.oSdz25v6.js";const F=JSON.parse('{"title":"Anidamiento","description":"","frontmatter":{},"headers":[],"relativePath":"nesting.md","filePath":"nesting.md"}'),l={name:"nesting.md"};function h(p,s,t,k,o,d){return n(),a("div",null,s[0]||(s[0]=[e("",35)]))}const c=i(l,[["render",h]]);export{F as __pageData,c as default};
