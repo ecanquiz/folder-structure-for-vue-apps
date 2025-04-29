@@ -5,23 +5,23 @@ Por: [Ernesto Canquiz](https://github.com/ecanquiz)
 >Supongamos que vamos a revisar la página de Iniciar Sesión para depurar nuestro código. Entramos en la carpeta `src/modules/Auth/views/` y seleccionamos el archivo `Login.vue`.
 
 ```sh{14}
-└── src/
-    ├── core/
-    └── modules/
-        ├── Auth/
-        │   ├── components/
-        │   ├── composables/
-        │   ├── router/
-        │   ├── services/
-        │   ├── stores/
-        │   ├── types/
-        │   └── views/
-        │       ├── Dashboard.vue
-        │       ├── Home.vue
-        │       ├── Login.vue
-        │       ├── Profile.vue
-        │       └── Register.vue
-        └── User/
+└──src/
+   ├──core/
+   └──modules/
+      ├──Auth/
+      │  ├──components/
+      │  ├──composables/
+      │  ├──router/
+      │  ├──services/
+      │  ├──stores/
+      │  ├──types/
+      │  └──views/
+      │     ├──Dashboard.vue
+      │     ├──Home.vue
+      │     ├──Login.vue
+      │     ├──Profile.vue
+      │     └──Register.vue
+      └──User/
 ```
 
 Al editar el archivo `Login.vue`, nos encontramos con un [SFC](https://vuejs.org/guide/scaling-up/sfc) _(Single File Component)_ parecido al siguiente:
@@ -52,70 +52,70 @@ Tenga en cuenta que el archivo `Login.vue` importa dos (2) archivos:
 
 1) El componente `LoginForm.vue`.
 ```sh{7,25}
-└── src/
-    ├── core/
-    └── modules/
-        ├── Auth/
-        │   ├── components/
-        │   │   ├── About.vue
-        │   │   ├── FormLogin.vue
-        │   │   ├── FormRegister.vue
-        │   │   ├── FormUpdatePassword.vue
-        │   │   ├── FormUser.vue
-        │   │   ├── FormVerifyEmail.vue
-        │   │   ├── Logout.vue
-        │   │   ├── ProfileFileUpload.vue
-        │   │   ├── ProfileUpdatePassword.vue
-        │   │   ├── ProfileUser.vue
-        │   │   └── ProfileVerifyEmail.vue
-        │   ├── composables/
-        │   ├── router/
-        │   ├── services/
-        │   ├── stores/
-        │   ├── types/
-        │   └── views/
-        │       ├── Dashboard.vue
-        │       ├── Home.vue
-        │       ├── Login.vue
-        │       ├── Profile.vue
-        │       └── Register.vue
-        └── User/
+└──src/
+   ├──core/
+   └──modules/
+      ├──Auth/
+      │  ├──components/
+      │  │  ├──About.vue
+      │  │  ├──FormLogin.vue
+      │  │  ├──FormRegister.vue
+      │  │  ├──FormUpdatePassword.vue
+      │  │  ├──FormUser.vue
+      │  │  ├──FormVerifyEmail.vue
+      │  │  ├──Logout.vue
+      │  │  ├──ProfileFileUpload.vue
+      │  │  ├──ProfileUpdatePassword.vue
+      │  │  ├──ProfileUser.vue
+      │  │  └──ProfileVerifyEmail.vue
+      │  ├──composables/
+      │  ├──router/
+      │  ├──services/
+      │  ├──stores/
+      │  ├──types/
+      │  └──views/
+      │     ├──Dashboard.vue
+      │     ├──Home.vue
+      │     ├──Login.vue
+      │     ├──Profile.vue
+      │     └──Register.vue
+      └──User/
 ```
 
 2) El componible `useLogin.ts`.
 ```sh{7,18,29}
-└── src/
-    ├── core/
-    └── modules/
-        ├── Auth/
-        │   ├── components/
-        │   │   ├── About.vue
-        │   │   ├── FormLogin.vue
-        │   │   ├── FormRegister.vue
-        │   │   ├── FormUpdatePassword.vue
-        │   │   ├── FormUser.vue
-        │   │   ├── FormVerifyEmail.vue
-        │   │   ├── Logout.vue
-        │   │   ├── ProfileFileUpload.vue
-        │   │   ├── ProfileUpdatePassword.vue
-        │   │   ├── ProfileUser.vue
-        │   │   └── ProfileVerifyEmail.vue
-        │   ├── composables/
-        │   │   ├── useLogin.ts
-        │   │   ├── useProfileUpdatePassword.ts
-        │   │   ├── useProfileUser.ts
-        │   │   └── useRegister.ts
-        │   ├── router/
-        │   ├── services/
-        │   ├── stores/
-        │   ├── types/
-        │   └── views/
-        │       ├── Dashboard.vue
-        │       ├── Home.vue
-        │       ├── Login.vue
-        │       ├── Profile.vue
-        │       └── Register.vue
-        └── User/
+└──src/
+   ├──core/
+   └──modules/
+      ├──Auth/
+      │  ├──components/
+      │  │  ├──About.vue
+      │  │  ├──FormLogin.vue
+      │  │  ├──FormRegister.vue
+      │  │  ├──FormUpdatePassword.vue
+      │  │  ├──FormUser.vue
+      │  │  ├──FormVerifyEmail.vue
+      │  │  ├──Logout.vue
+      │  │  ├──ProfileFileUpload.vue
+      │  │  ├──ProfileUpdatePassword.vue
+      │  │  ├──ProfileUser.vue
+      │  │  └──ProfileVerifyEmail.vue
+      │  ├──composables/
+      │  │  ├──useLogin.ts
+      │  │  ├──useProfileUpdatePassword.ts
+      │  │  ├──useProfileUser.ts
+      │  │  └──useRegister.ts
+      │  ├──router/
+      │  ├──services/
+      │  ├──stores/
+      │  ├──types/
+      │  └──views/
+      │     ├──Dashboard.vue
+      │     ├──Home.vue
+      │     ├──Login.vue
+      │     ├──Profile.vue
+      │     └──Register.vue
+      └──User/
 ```
 
 Afortunadamente nuestro código ya está ordenado por módulos. En este caso, todo lo que necesitamos revisar está ubicado en el módulo `Auth`.
